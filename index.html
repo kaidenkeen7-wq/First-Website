@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keen Website Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-mark">KWD</span>
+        <span class="logo-text">Keen Website Design</span>
+      </a>
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-tab="home">Home</button>
+        <button class="nav-tab" data-tab="services">Services</button>
+        <button class="nav-tab" data-tab="pricing">Pricing</button>
+        <button class="nav-tab" data-tab="blog">Blog</button>
+        <button class="nav-tab" data-tab="portfolio">Portfolio</button>
+        <button class="nav-tab" data-tab="templates">Design Templates</button>
+        <button class="nav-tab" data-tab="contact">Contact Us</button>
+        <div class="tab-indicator"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME PAGE ===== -->
+  <section id="home" class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-content">
+        <span class="hero-badge">
+          <span class="badge-dot"></span>
+          Open for clients
+        </span>
+        <h1 class="hero-title">
+          Turn your business into<br />
+          <span class="gradient-text">a name people remember.</span>
+        </h1>
+        <p class="hero-sub">
+          Custom websites that make your business look as good as it is.<br />
+          Clean design, fast delivery, and built to grow with you.
+        </p>
+        <div class="hero-actions">
+          <button class="cta-btn" onclick="document.querySelector('[data-tab=contact]').click()">
+            Get in Touch <span class="cta-arrow">→</span>
+          </button>
+          <button class="cta-ghost" onclick="switchTab('templates')">See Design Templates</button>
+        </div>
+        <div class="hero-tags" aria-hidden="true">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>Responsive</span><span>SEO-Ready</span><span>Fast</span>
+        </div>
+      </div>
+      <div class="hero-dashboard" aria-hidden="true">
+        <div class="hd-chrome">
+          <div class="hd-dots">
+            <span class="hd-dot hd-dot-r"></span>
+            <span class="hd-dot hd-dot-y"></span>
+            <span class="hd-dot hd-dot-g"></span>
+          </div>
+          <div class="hd-tab-row">
+            <span class="hd-tab active-tab">Dashboard</span>
+            <span class="hd-tab">Analytics</span>
+            <span class="hd-tab">Reports</span>
+          </div>
+          <div class="hd-plus">+</div>
+        </div>
+        <div class="hd-body">
+          <div class="hd-sidebar">
+            <div class="hd-si hd-si-active"><div class="hd-si-icon">▦</div></div>
+            <div class="hd-si"><div class="hd-si-icon">◈</div></div>
+            <div class="hd-si"><div class="hd-si-icon">◎</div></div>
+            <div class="hd-si"><div class="hd-si-icon">⊞</div></div>
+          </div>
+          <div class="hd-main">
+            <div class="hd-balance">
+              <div class="hd-bal-label">Total Balance</div>
+              <div class="hd-bal-num">$47,321.58</div>
+              <div class="hd-bal-sub">↑ 2.4% from last month</div>
+              <div class="hd-view-all">View All →</div>
+            </div>
+            <div class="hd-section-label">Highlighted Insights <span>Today ▾</span></div>
+            <div class="hd-cards">
+              <div class="hd-card">
+                <div class="hd-card-top">
+                  <div class="hd-card-lbl">Revenue</div>
+                  <div class="hd-card-val hd-val-up">↑ 8.2%</div>
+                </div>
+                <svg class="hd-chart" viewBox="0 0 80 34" preserveAspectRatio="none">
+                  <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7c6ff7" stop-opacity="0.5"/><stop offset="100%" stop-color="#7c6ff7" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0,30 L10,24 L22,20 L34,22 L46,14 L58,10 L68,6 L80,2 L80,34 L0,34 Z" fill="url(#g1)"/>
+                  <path d="M0,30 L10,24 L22,20 L34,22 L46,14 L58,10 L68,6 L80,2" fill="none" stroke="#7c6ff7" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="hd-card">
+                <div class="hd-card-top">
+                  <div class="hd-card-lbl">Growth</div>
+                  <div class="hd-card-val hd-val-up">↑ 12.5%</div>
+                </div>
+                <svg class="hd-chart" viewBox="0 0 80 34" preserveAspectRatio="none">
+                  <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22c55e" stop-opacity="0.45"/><stop offset="100%" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0,28 L10,26 L22,22 L32,18 L44,20 L56,12 L66,6 L74,8 L80,4 L80,34 L0,34 Z" fill="url(#g2)"/>
+                  <path d="M0,28 L10,26 L22,22 L32,18 L44,20 L56,12 L66,6 L74,8 L80,4" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="hd-card">
+                <div class="hd-card-top">
+                  <div class="hd-card-lbl">Traffic</div>
+                  <div class="hd-card-val hd-val-dn">↓ 1.8%</div>
+                </div>
+                <svg class="hd-chart" viewBox="0 0 80 34" preserveAspectRatio="none">
+                  <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#64748b" stop-opacity="0.4"/><stop offset="100%" stop-color="#64748b" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0,10 L10,14 L22,12 L32,16 L44,18 L56,14 L66,20 L74,22 L80,26 L80,34 L0,34 Z" fill="url(#g3)"/>
+                  <path d="M0,10 L10,14 L22,12 L32,16 L44,18 L56,14 L66,20 L74,22 L80,26" fill="none" stroke="#64748b" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="hd-section-label">Reports Overview <span>Last 7 Days ▾</span></div>
+            <div class="hd-reports-cards">
+              <div class="hd-rcard">
+                <div class="hd-rc-row"><span class="hd-rc-dot hd-dot-p"></span><div class="hd-rc-bar"></div><span class="hd-rc-amt hd-amt-g">+$1,240</span></div>
+                <div class="hd-rc-row"><span class="hd-rc-dot hd-dot-b"></span><div class="hd-rc-bar"></div><span class="hd-rc-amt hd-amt-g">+$890</span></div>
+                <div class="hd-rc-row"><span class="hd-rc-dot hd-dot-r2"></span><div class="hd-rc-bar" style="width:30%"></div><span class="hd-rc-amt hd-amt-r">-$340</span></div>
+                <div class="hd-rc-row"><span class="hd-rc-dot hd-dot-p"></span><div class="hd-rc-bar" style="width:85%"></div><span class="hd-rc-amt hd-amt-g">+$2,100</span></div>
+              </div>
+              <div class="hd-rcard">
+                <div class="hd-bars">
+                  <div class="hd-bar" style="height:35%"></div>
+                  <div class="hd-bar hd-bar-hi" style="height:62%"></div>
+                  <div class="hd-bar" style="height:45%"></div>
+                  <div class="hd-bar hd-bar-hi" style="height:80%"></div>
+                  <div class="hd-bar" style="height:55%"></div>
+                  <div class="hd-bar" style="height:38%"></div>
+                  <div class="hd-bar hd-bar-hi" style="height:72%"></div>
+                </div>
+              </div>
+              <div class="hd-rcard">
+                <div class="hd-bars">
+                  <div class="hd-bar" style="height:50%"></div>
+                  <div class="hd-bar" style="height:30%"></div>
+                  <div class="hd-bar hd-bar-hi" style="height:70%"></div>
+                  <div class="hd-bar" style="height:45%"></div>
+                  <div class="hd-bar hd-bar-hi" style="height:85%"></div>
+                  <div class="hd-bar" style="height:60%"></div>
+                  <div class="hd-bar" style="height:40%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee Strip -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span class="mq-item">Barbershops</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Restaurants</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Contractors</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Law Firms</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Gyms &amp; Fitness</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Hair Salons</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Nonprofits</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Real Estate</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Startups</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Food Trucks</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Freelancers</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Retail Stores</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Barbershops</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Restaurants</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Contractors</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Law Firms</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Gyms &amp; Fitness</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Hair Salons</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Nonprofits</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Real Estate</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Startups</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Food Trucks</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Freelancers</span><span class="mq-dot"> • </span>
+        <span class="mq-item">Retail Stores</span><span class="mq-dot"> • </span>
+      </div>
+    </div>
+
+    <!-- Features Strip -->
+    <div class="features-strip">
+      <div class="section-container">
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Most sites go live in under 2 weeks. No endless back-and-forth, no waiting around.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile-First</h3>
+            <p>Every site looks and works perfectly on phones, tablets, and desktops — no exceptions.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🔍</div>
+            <h3>SEO-Ready</h3>
+            <p>Clean markup and smart structure so search engines find you and customers follow.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">💰</div>
+            <h3>Fair Pricing</h3>
+            <p>No agency markups. No surprise invoices. Just honest rates for real, quality work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote / Stats Banner -->
+    <div class="quote-banner">
+      <div class="section-container">
+        <div class="qb-grid">
+          <div class="qb-stat reveal">
+            <div class="qb-num">2 wks</div>
+            <div class="qb-lbl">Avg. delivery time</div>
+          </div>
+          <div class="qb-divider"></div>
+          <div class="qb-stat reveal">
+            <div class="qb-num">100%</div>
+            <div class="qb-lbl">Custom-built</div>
+          </div>
+          <div class="qb-divider"></div>
+          <div class="qb-stat reveal">
+            <div class="qb-num">$0</div>
+            <div class="qb-lbl">Template fees</div>
+          </div>
+          <div class="qb-divider"></div>
+          <div class="qb-quote reveal">
+            <p>"Your website is your best salesperson — it works 24/7, never calls in sick, and reaches people you never could alone."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section section-alt" id="about">
+      <div class="section-container about-grid">
+        <div class="about-text reveal">
+          <span class="section-tag">About</span>
+          <h2>Why Keen Website Design?</h2>
+          <p>Everyone deserves a presence on the web — not just businesses with big budgets. Keen Website Design was built to give individuals, nonprofits, and small businesses a professional online home without the premium agency price tag.</p>
+          <p>Every site I build is custom-designed, fast-loading, and crafted with care. No templates forced on you. No cookie-cutter results.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Custom built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">Fast</span>
+              <span class="stat-label">Turnaround</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">Fair</span>
+              <span class="stat-label">Pricing</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="code-card">
+            <div class="code-card-header">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="code-card-body">
+              <div class="cl"><span class="c-purple">const</span> <span class="c-blue">site</span> <span class="c-w">= {</span></div>
+              <div class="cl pl"><span class="c-blue">design</span><span class="c-w">:</span> <span class="c-green">'clean'</span><span class="c-w">,</span></div>
+              <div class="cl pl"><span class="c-blue">speed</span><span class="c-w">:</span> <span class="c-green">'blazing'</span><span class="c-w">,</span></div>
+              <div class="cl pl"><span class="c-blue">price</span><span class="c-w">:</span> <span class="c-green">'fair'</span><span class="c-w">,</span></div>
+              <div class="cl pl"><span class="c-blue">client</span><span class="c-w">:</span> <span class="c-green">'you'</span></div>
+              <div class="cl"><span class="c-w">}</span></div>
+              <div class="cl cl-gap"><span class="c-purple">return</span> <span class="c-blue">site</span><span class="c-w">.</span><span class="c-yellow">launch()</span></div>
+              <span class="code-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="section" id="process">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">Process</span>
+          <h2>Simple as 1, 2, 3.</h2>
+          <p>Getting a website built shouldn't feel complicated. Here's how we keep it painless.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <div class="process-icon">💬</div>
+            <h3>Tell us your vision</h3>
+            <p>We start with a conversation — your brand, your goals, what makes your business unique. No forms, no fluff.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <div class="process-icon">🎨</div>
+            <h3>We design &amp; build</h3>
+            <p>A site crafted to fit your brand — not a template with your logo dropped in. You review, we refine until it's right.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <div class="process-icon">🚀</div>
+            <h3>Launch &amp; grow</h3>
+            <p>We get you live fast. You walk away with a site your business is proud to send people to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" id="contact-home">
+      <div class="section-container contact-wrap">
+        <div class="section-header reveal">
+          <span class="section-tag">Contact</span>
+          <h2>Let's work together.</h2>
+          <p>Ready to build something? Reach out and let's make it happen.</p>
+        </div>
+        <div class="contact-pills reveal">
+          <a href="mailto:kaidenkeen7@gmail.com" class="contact-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m2 7 10 7 10-7"/>
+            </svg>
+            kaidenkeen7@gmail.com
+          </a>
+          <a href="tel:1-832-779-3666" class="contact-pill" aria-label="Phone number">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.81.34 1.6.65 2.35a2 2 0 0 1-.45 2.11L9.11 10.89a16 16 0 0 0 6 6l1.7-1.7a2 2 0 0 1 2.11-.45c.75.31 1.54.53 2.35.65A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            1-832-779-3666
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+  <!-- ===== PORTFOLIO PAGE ===== -->
+  <section id="portfolio" class="page">
+
+    <div class="portfolio-header">
+      <h1 class="reveal">Our Work</h1>
+      <p class="reveal">A selection of websites designed and built for real clients.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Bloom Florist -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">bloomflorist.com</span>
+          </div>
+          <div class="browser-body site-bloom">
+            <div class="ms-nav ms-nav-light">
+              <div class="ms-logo ms-logo-pink"></div>
+              <div class="ms-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-bloom">
+              <div class="ms-hero-inner">
+                <div class="ms-h1 ms-h1-dark"></div>
+                <div class="ms-p ms-p-dark"></div>
+                <div class="ms-btn ms-btn-pink"></div>
+              </div>
+            </div>
+            <div class="ms-cards">
+              <div class="ms-card ms-card-pink"></div>
+              <div class="ms-card ms-card-pink"></div>
+              <div class="ms-card ms-card-pink"></div>
+            </div>
+            <div class="ms-footer ms-footer-blush"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Bloom Florist</h3>
+          <p>Elegant floral boutique website</p>
+        </div>
+      </div>
+
+      <!-- Apex Fitness -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">apexfitness.io</span>
+          </div>
+          <div class="browser-body site-apex">
+            <div class="ms-nav ms-nav-dark">
+              <div class="ms-logo ms-logo-orange"></div>
+              <div class="ms-links ms-links-light"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-apex">
+              <div class="ms-hero-inner">
+                <div class="ms-h1 ms-h1-light"></div>
+                <div class="ms-p ms-p-light"></div>
+                <div class="ms-btn ms-btn-orange"></div>
+              </div>
+            </div>
+            <div class="ms-stats">
+              <div class="ms-stat ms-stat-orange"></div>
+              <div class="ms-stat ms-stat-orange"></div>
+              <div class="ms-stat ms-stat-orange"></div>
+            </div>
+            <div class="ms-footer ms-footer-dark"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Apex Fitness</h3>
+          <p>High-energy gym &amp; training site</p>
+        </div>
+      </div>
+
+      <!-- Harlow Law -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">harlowlaw.com</span>
+          </div>
+          <div class="browser-body site-harlow">
+            <div class="ms-nav ms-nav-navy">
+              <div class="ms-logo ms-logo-gold"></div>
+              <div class="ms-links ms-links-gold"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-harlow">
+              <div class="ms-h1 ms-h1-navy"></div>
+              <div class="ms-p ms-p-navy"></div>
+              <div class="ms-btn ms-btn-gold"></div>
+            </div>
+            <div class="ms-two-col">
+              <div class="ms-text-col">
+                <div class="ms-line"></div>
+                <div class="ms-line"></div>
+                <div class="ms-line ms-line-short"></div>
+              </div>
+              <div class="ms-img-col ms-img-navy"></div>
+            </div>
+            <div class="ms-footer ms-footer-navy"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Harlow Law</h3>
+          <p>Professional legal firm website</p>
+        </div>
+      </div>
+
+      <!-- Nova Coffee -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">novacoffee.co</span>
+          </div>
+          <div class="browser-body site-nova">
+            <div class="ms-nav ms-nav-cream">
+              <div class="ms-logo ms-logo-brown"></div>
+              <div class="ms-links ms-links-brown"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-nova">
+              <div class="ms-hero-inner">
+                <div class="ms-h1 ms-h1-light"></div>
+                <div class="ms-p ms-p-light"></div>
+              </div>
+            </div>
+            <div class="ms-menu-grid">
+              <div class="ms-menu-item ms-menu-brown"></div>
+              <div class="ms-menu-item ms-menu-brown"></div>
+              <div class="ms-menu-item ms-menu-brown"></div>
+              <div class="ms-menu-item ms-menu-brown"></div>
+            </div>
+            <div class="ms-footer ms-footer-brown"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Nova Coffee</h3>
+          <p>Warm &amp; inviting café website</p>
+        </div>
+      </div>
+
+      <!-- Summit Realty -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">summitrealty.co</span>
+          </div>
+          <div class="browser-body site-summit">
+            <div class="ms-nav ms-nav-white">
+              <div class="ms-logo ms-logo-teal"></div>
+              <div class="ms-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-summit">
+              <div class="ms-search-bar"></div>
+            </div>
+            <div class="ms-listings">
+              <div class="ms-listing ms-listing-teal"></div>
+              <div class="ms-listing ms-listing-teal"></div>
+              <div class="ms-listing ms-listing-teal"></div>
+            </div>
+            <div class="ms-footer ms-footer-teal"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Summit Realty</h3>
+          <p>Modern real estate listings site</p>
+        </div>
+      </div>
+
+      <!-- Pixel Studio -->
+      <div class="portfolio-card">
+        <div class="mock-browser">
+          <div class="browser-chrome">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="browser-url">pixelstudio.design</span>
+          </div>
+          <div class="browser-body site-pixel">
+            <div class="ms-nav ms-nav-dark">
+              <div class="ms-logo ms-logo-purple"></div>
+              <div class="ms-links ms-links-purple"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ms-hero ms-hero-pixel">
+              <div class="ms-hero-inner">
+                <div class="ms-h1 ms-h1-light"></div>
+                <div class="ms-p ms-p-light"></div>
+              </div>
+            </div>
+            <div class="ms-bento">
+              <div class="ms-b1"></div>
+              <div class="ms-b2"></div>
+              <div class="ms-b3"></div>
+            </div>
+            <div class="ms-footer ms-footer-dark"></div>
+          </div>
+        </div>
+        <div class="card-overlay">
+          <a href="#" class="overlay-btn">View Project</a>
+        </div>
+        <div class="card-meta">
+          <h3>Pixel Studio</h3>
+          <p>Creative design agency portfolio</p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+  <!-- ===== SERVICES PAGE ===== -->
+  <section id="services" class="page">
+
+    <div class="services-header">
+      <p class="section-tag reveal">Services</p>
+      <h1 class="reveal">What We Build</h1>
+      <p class="reveal">From a single landing page to a full business site — every project is hand-coded, fast, and built to last.</p>
+    </div>
+
+    <div class="section-container" style="padding: 0 2rem 4rem; max-width: 1200px; margin: 0 auto;">
+      <div class="services-grid reveal">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Custom Websites</h3>
+          <p>Fully hand-coded in HTML, CSS, and JavaScript — no page builders, no bloat. Built to your exact brand.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <h3>Landing Pages</h3>
+          <p>High-converting single-page sites for campaigns, promos, or new business launches. Fast to build, fast to load.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Business Websites</h3>
+          <p>Multi-page professional sites (5–10 pages) covering your services, about section, contact, and more.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Portfolio Sites</h3>
+          <p>Showcase your work with a clean, modern site that lets your projects speak for themselves.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛍️</div>
+          <h3>Product &amp; Menu Display</h3>
+          <p>Service catalogs, restaurant menus, product listings — beautifully laid out and easy to navigate.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Website Redesigns</h3>
+          <p>Got an old or ugly site? We'll transform it into something you're proud to share with customers.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile Responsive</h3>
+          <p>Every site looks and works perfectly on phones, tablets, and desktops — no extra charge.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>SEO Optimization</h3>
+          <p>Proper structure, meta tags, semantic HTML, and fast load times so Google can actually find you.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📬</div>
+          <h3>Contact Forms</h3>
+          <p>Functional inquiry forms that capture leads and send them straight to your email or inbox.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Fast Delivery</h3>
+          <p>Most projects go live in under 2 weeks. Need it sooner? We can usually make it happen.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="services-cta-strip">
+      <div class="services-cta-inner">
+        <div class="svc-cta-text">
+          <h2>Not sure which service fits?</h2>
+          <p>Reach out and describe your business — we'll figure it out together.</p>
+          <button class="cta-btn" onclick="document.querySelector('[data-tab=contact]').click()">
+            Get in Touch <span class="cta-arrow">→</span>
+          </button>
+        </div>
+        <div class="svc-board-widget">
+          <div class="svc-board-col">
+            <div class="svc-board-col-hdr">Planned</div>
+            <div class="svc-board-card"><div class="bc-bar"></div><div class="bc-bar short"></div></div>
+            <div class="svc-board-card"><div class="bc-bar"></div><div class="bc-bar short"></div></div>
+          </div>
+          <div class="svc-board-col">
+            <div class="svc-board-col-hdr">In Progress</div>
+            <div class="svc-board-card"><div class="bc-dot bc-blue"></div><div class="bc-bar"></div></div>
+            <div class="svc-board-card"><div class="bc-dot bc-purple"></div><div class="bc-bar short"></div></div>
+          </div>
+          <div class="svc-board-col">
+            <div class="svc-board-col-hdr">Done</div>
+            <div class="svc-board-card"><div class="bc-dot bc-green"></div><div class="bc-bar"></div></div>
+            <div class="svc-board-card"><div class="bc-dot bc-green"></div><div class="bc-bar short"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+
+  <!-- ===== PRICING PAGE ===== -->
+  <section id="pricing" class="page">
+
+    <div class="pricing-header">
+      <p class="section-tag reveal">Pricing</p>
+      <h1 class="reveal">Simple, Honest Pricing</h1>
+      <p class="reveal">No hidden fees. No subscriptions. One flat price and you own it.</p>
+    </div>
+
+    <div class="section-container" style="padding: 0 2rem 6rem; max-width: 1200px; margin: 0 auto;">
+
+      <div class="pricing-grid reveal">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price"><sup>$</sup>199</div>
+          <div class="pricing-tagline">Perfect for getting online for the first time.</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>1–3 pages</li>
+            <li>Mobile responsive</li>
+            <li>Your contact info displayed</li>
+            <li>Basic SEO setup</li>
+            <li>Custom domain support</li>
+            <li>Delivered in ~1 week</li>
+          </ul>
+          <button class="pricing-cta" onclick="document.querySelector('[data-tab=contact]').click()">Get Started</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-popular">Most Popular</div>
+          <div class="pricing-tier">Business</div>
+          <div class="pricing-price"><sup>$</sup>399</div>
+          <div class="pricing-tagline">For businesses ready to look professional online.</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>5–7 pages</li>
+            <li>Contact form (email-connected)</li>
+            <li>Blog-ready structure</li>
+            <li>Social media links</li>
+            <li>Google Maps embed</li>
+            <li>SEO + meta tags</li>
+            <li>Delivered in ~1.5 weeks</li>
+          </ul>
+          <button class="pricing-cta" onclick="document.querySelector('[data-tab=contact]').click()">Get Started</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price"><sup>$</sup>699</div>
+          <div class="pricing-tagline">For businesses that want to stand out from day one.</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>10+ pages</li>
+            <li>Custom animations &amp; transitions</li>
+            <li>Photo/portfolio gallery</li>
+            <li>Service or menu display</li>
+            <li>Advanced SEO</li>
+            <li>Google Maps + reviews section</li>
+            <li>Delivered in ~2 weeks</li>
+          </ul>
+          <button class="pricing-cta" onclick="document.querySelector('[data-tab=contact]').click()">Get Started</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">E-Commerce</div>
+          <div class="pricing-price"><sup>$</sup>999</div>
+          <div class="pricing-tagline">Sell products or services directly from your site.</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Product / catalog display</li>
+            <li>Menu or service listings</li>
+            <li>Payment link integration</li>
+            <li>Order form or checkout page</li>
+            <li>Everything in Pro</li>
+            <li>Delivered in ~2–3 weeks</li>
+          </ul>
+          <button class="pricing-cta" onclick="document.querySelector('[data-tab=contact]').click()">Get Started</button>
+        </div>
+
+      </div>
+
+      <div class="addons-section reveal">
+        <h3>Add-Ons</h3>
+        <div class="addons-grid">
+          <div class="addon-card">
+            <div class="addon-name">Logo Design</div>
+            <div class="addon-price">+$50</div>
+            <div class="addon-desc">A clean, simple logo to match your new site — no illustrator required.</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Extra Page</div>
+            <div class="addon-price">+$49/pg</div>
+            <div class="addon-desc">Need one more page beyond your package? Add it for a flat rate.</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Monthly Maintenance</div>
+            <div class="addon-price">$25/mo</div>
+            <div class="addon-desc">Small updates, text changes, and link fixes handled for you each month.</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Copywriting Help</div>
+            <div class="addon-price">+$75</div>
+            <div class="addon-desc">Don't know what to write? We'll write the words for your site from scratch.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section reveal">
+        <h3>Frequently Asked Questions</h3>
+
+        <details class="faq-item">
+          <summary>What's included in every package?</summary>
+          <div class="faq-body">
+            Every package includes mobile-responsive design, basic SEO setup (title tags, meta descriptions, sitemap), support for your custom domain, and up to 2 rounds of revisions. You own everything — no recurring fees unless you add maintenance.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you offer payment plans?</summary>
+          <div class="faq-body">
+            Yes. For projects over $399, we typically split it 50% upfront and 50% on delivery. If you need a different arrangement, just ask — we're flexible with small businesses.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long does a site take to build?</summary>
+          <div class="faq-body">
+            Starter sites usually take 5–7 days. Business sites run 10–12 days. Pro and E-Commerce projects are typically 2–3 weeks. The biggest factor is how quickly you can provide content (photos, info, etc.).
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I need changes after launch?</summary>
+          <div class="faq-body">
+            Minor changes in the first 7 days after launch are always free. After that, small fixes are usually quick and we quote them honestly. Or sign up for Monthly Maintenance for ongoing peace of mind.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to buy hosting or a domain?</summary>
+          <div class="faq-body">
+            You'll need a domain name (usually ~$12/yr from Namecheap or Google Domains). For hosting, we can set you up on a free tier like Netlify or GitHub Pages for most sites, or advise on affordable paid options if needed.
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+
+  <!-- ===== BLOG PAGE ===== -->
+  <section id="blog" class="page">
+
+    <div class="portfolio-header">
+      <p class="section-tag reveal">Blog</p>
+      <h1 class="reveal">The KWD Blog</h1>
+      <p class="reveal">Tips, insights, and honest advice for small businesses getting online.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- Post 1 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(129,140,248,0.15));">🌐</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-date">June 2026</span>
+            <span class="blog-tag">Growth</span>
+          </div>
+          <h2>Why Every Small Business Needs a Website in 2026</h2>
+          <p>Your customers are Googling you before they walk in the door — or they're walking past. Here's why having no website is the most expensive mistake a small business can make right now.</p>
+        </div>
+        <div class="blog-full" style="display:none;">
+          <p>In 2026, <strong>78% of consumers look up a business online before visiting in person.</strong> If they can't find you — or worse, they find a site that looks like it hasn't been updated since 2009 — they move on to whoever's next in the search results.</p>
+          <p>A website isn't a luxury anymore. It's your storefront, your business card, and your first impression all rolled into one. And unlike a physical sign, it works 24/7 without you having to do anything.</p>
+          <p><strong>Social media isn't enough.</strong> Facebook and Instagram can change their algorithm any day. Your business profile gets buried. But your website? That's yours. No algorithm decides whether people see it. When someone types your business name into Google, your site shows up.</p>
+          <p>Even a simple, clean, one-page site with your services, contact info, and a few photos does more for credibility than any number of social posts. It tells customers you're real, you're professional, and you mean business.</p>
+          <p>The businesses that skipped getting a website in 2020 lost ground during the pandemic and never fully got it back. Don't make the same call in 2026. A site that costs a few hundred dollars today can easily be worth thousands in new customers over the next year.</p>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, rgba(251,146,60,0.15), rgba(248,113,113,0.15));">🔄</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-date">May 2026</span>
+            <span class="blog-tag">Design</span>
+          </div>
+          <h2>5 Signs It's Time to Redesign Your Website</h2>
+          <p>If your site takes forever to load, looks bad on phones, or you're embarrassed to hand out your URL — it's time. Here's how to know for sure and what to do about it.</p>
+        </div>
+        <div class="blog-full" style="display:none;">
+          <p><strong>1. You're embarrassed to share it.</strong> If you hesitate before giving out your website URL, that hesitation is costing you business. Your site should be something you're proud to hand to a new customer.</p>
+          <p><strong>2. It looks bad on mobile.</strong> Over 60% of web traffic now comes from phones. If your site isn't responsive — meaning it resizes and reflows for small screens — you're losing more than half your potential visitors the moment they land on it.</p>
+          <p><strong>3. It loads slowly.</strong> Every extra second of load time drops your conversion rate. If your site uses outdated technology, heavy unoptimized images, or old page builders, it's probably slow — and Google penalizes that in search rankings.</p>
+          <p><strong>4. It doesn't reflect who you are anymore.</strong> Businesses evolve. If your site still shows your old logo, old services, or old prices, it's not just outdated — it's actively misleading customers. A redesign is also a chance to reset your brand.</p>
+          <p><strong>5. You can't update it yourself.</strong> If your site is a black box that only a specific developer can touch, that's a problem. Modern sites should be easy to update, or at minimum, have a clear process for making changes without a full rebuild.</p>
+          <p>Any one of these is a good reason to act. If two or more apply to you, the redesign will pay for itself faster than you think.</p>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img" style="background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(56,189,248,0.15));">🛠️</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-date">April 2026</span>
+            <span class="blog-tag">Web Design</span>
+          </div>
+          <h2>Template vs. Custom: What's Actually the Difference?</h2>
+          <p>Templates are cheap and fast. Custom sites are built for you. But what does that actually mean for your business? Here's the honest breakdown — no sales pitch.</p>
+        </div>
+        <div class="blog-full" style="display:none;">
+          <p>When people say "template website," they usually mean something built on Squarespace, Wix, or a WordPress theme. You pick a layout, swap in your photos and text, and you're live. It's genuinely fast and costs close to nothing upfront.</p>
+          <p><strong>The trade-off:</strong> you're renting space in someone else's box. Every business using that template looks vaguely similar. You can't move things around freely. The page builder adds layers of code that slow things down. And every month, you pay a subscription just to keep the site alive.</p>
+          <p><strong>Custom-coded sites</strong> start from scratch in HTML, CSS, and JavaScript. Every element is placed intentionally. The code is clean and loads fast. Nothing is there by default — only what your site actually needs.</p>
+          <p>That means the site can look exactly like your brand, not like a theme that thousands of other businesses are also using. It also means you own the files outright — no platform can raise prices on you or shut down and take your site with them.</p>
+          <p>For a solo freelancer or brand-new startup, a template might be the right call to get online quickly with zero budget. But for a business that's serious about its brand and wants to stay competitive long-term, custom is almost always the smarter investment — especially when the price difference isn't as big as most people assume.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="blog-expand-row">
+      <button class="blog-expand-btn" id="blogToggleBtn" onclick="toggleAllBlogPosts(this)">Read More →</button>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <section id="contact" class="page">
+
+    <div class="contact-page-header">
+      <p class="section-tag reveal">Contact</p>
+      <h1 class="reveal">Let's Work Together</h1>
+      <p class="reveal">Have a project in mind? Reach out and we'll talk through it — no pressure, no pitch.</p>
+    </div>
+
+    <div class="section-container" style="padding: 0 2rem 6rem; max-width: 1000px; margin: 0 auto;">
+
+      <div class="contact-page-grid reveal">
+
+        <div class="contact-info-block">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Get in touch directly</h3>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.7;">Send an email or text and you'll hear back within 24 hours. No automated responses — you'll be talking to Kaiden directly.</p>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value">kaidenkeen7@gmail.com</div>
+              <div class="ci-sub">Preferred method — fastest response</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Phone / Text</div>
+              <div class="ci-value">1-832-779-3666</div>
+              <div class="ci-sub">Texts get a faster reply than calls</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-value">Houston, TX</div>
+              <div class="ci-sub">Working with clients anywhere</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <div class="ci-label">Availability</div>
+              <div class="ci-value">Mon – Sat</div>
+              <div class="ci-sub">Usually available most days — response within 24 hours</div>
+            </div>
+          </div>
+
+          <div class="contact-hint">
+            <h4>What to include in your first message</h4>
+            <p>Tell me a bit about your business, what kind of site you're looking for, and roughly when you'd like to launch. The more detail you share upfront, the faster we can get started.</p>
+          </div>
+
+          <div class="msg-widget">
+            <div class="msg-widget-header">Messages</div>
+            <div class="msg-thread">
+              <div class="msg-bubble incoming">Hey Kaiden 👋 I run a local bakery and need a website. Can you help?</div>
+              <div class="msg-time">2:14 PM</div>
+              <div class="msg-bubble outgoing">Absolutely! Tell me a bit about your bakery and what pages you'd need — I'll get a quote over to you today.</div>
+              <div class="msg-bubble incoming">Just a homepage, menu, and contact form. Looking to launch in 2 weeks.</div>
+              <div class="msg-time">2:17 PM</div>
+            </div>
+            <div class="msg-input-row">
+              <div class="msg-input-fake">Type a message…</div>
+              <div class="msg-send-btn">→</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-expect-card">
+          <h3>What to expect</h3>
+          <div class="expect-steps">
+
+            <div class="expect-step">
+              <div class="expect-num">1</div>
+              <div>
+                <h4>You reach out</h4>
+                <p>Send an email or text with a quick description of your project. No forms, no intake questionnaires — just a message.</p>
+              </div>
+            </div>
+
+            <div class="expect-step">
+              <div class="expect-num">2</div>
+              <div>
+                <h4>We have a quick conversation</h4>
+                <p>We'll talk through what you need — your goals, your brand, your timeline, and any pages or features you want included.</p>
+              </div>
+            </div>
+
+            <div class="expect-step">
+              <div class="expect-num">3</div>
+              <div>
+                <h4>We agree on a scope and price</h4>
+                <p>You get a clear quote before anything starts. No surprises, no scope creep without your approval.</p>
+              </div>
+            </div>
+
+            <div class="expect-step">
+              <div class="expect-num">4</div>
+              <div>
+                <h4>We build your site</h4>
+                <p>You'll see progress along the way and have the chance to request changes before final delivery.</p>
+              </div>
+            </div>
+
+            <div class="expect-step">
+              <div class="expect-num">5</div>
+              <div>
+                <h4>You launch</h4>
+                <p>Site goes live, you own everything, and you walk away with something you're proud of.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+
+  <!-- ===== DESIGN TEMPLATES PAGE ===== -->
+  <section id="templates" class="page">
+
+    <div class="portfolio-header">
+      <p class="section-tag reveal">Templates</p>
+      <h1 class="reveal">Design Templates</h1>
+      <p class="reveal">Click any card to preview a full site layout — then imagine it with your brand, your words, your business.</p>
+    </div>
+
+    <div class="section-container" style="padding: 0 2rem 6rem; max-width: 1200px; margin: 0 auto;">
+      <div class="templates-grid">
+
+        <!-- Template 1: Barbershop (dark gold/vintage) -->
+        <div class="template-card reveal" data-template="template1">
+          <div class="tc-art tc-art-1">
+            <div class="tc1-nav"><span class="tc1-logo"></span><div class="tc1-links"><span></span><span></span><span></span><span></span></div></div>
+            <div class="tc1-hero">
+              <div class="tc1-badge"></div>
+              <div class="tc1-h1"></div>
+              <div class="tc1-sub"></div>
+              <div class="tc1-btn"></div>
+            </div>
+            <div class="tc1-svcs"><span>✂</span><span>🪒</span><span>🚿</span><span>💆</span></div>
+          </div>
+          <span class="template-badge">Barbershop</span>
+          <div class="template-meta">
+            <h3>Design Template 1</h3>
+            <p>Vintage dark &amp; gold style for barbershops and salons.</p>
+          </div>
+        </div>
+
+        <!-- Template 2: Restaurant (white/green) -->
+        <div class="template-card reveal" data-template="template2">
+          <div class="tc-art tc-art-2">
+            <div class="tc2-nav"><span class="tc2-logo"></span><div class="tc2-links"><span></span><span></span><span></span></div><div class="tc2-navbtn"></div></div>
+            <div class="tc2-hero">
+              <div class="tc2-left">
+                <div class="tc2-chip"></div>
+                <div class="tc2-h1"></div>
+                <div class="tc2-h2"></div>
+                <div class="tc2-sub"></div>
+                <div class="tc2-ctas"><div class="tc2-cta1"></div><div class="tc2-cta2"></div></div>
+              </div>
+              <div class="tc2-food">🍔</div>
+            </div>
+            <div class="tc2-menu">
+              <div class="tc2-item"><div class="tc2-th">🍕</div><div class="tc2-nm"></div><div class="tc2-pr"></div><div class="tc2-buybtn"></div></div>
+              <div class="tc2-item"><div class="tc2-th">🍟</div><div class="tc2-nm"></div><div class="tc2-pr"></div><div class="tc2-buybtn"></div></div>
+              <div class="tc2-item"><div class="tc2-th">🥤</div><div class="tc2-nm"></div><div class="tc2-pr"></div><div class="tc2-buybtn"></div></div>
+            </div>
+          </div>
+          <span class="template-badge">Restaurant</span>
+          <div class="template-meta">
+            <h3>Design Template 2</h3>
+            <p>Clean green &amp; white layout for restaurants and food brands.</p>
+          </div>
+        </div>
+
+        <!-- Template 3: Contractor (white/red) -->
+        <div class="template-card reveal" data-template="template3">
+          <div class="tc-art tc-art-3">
+            <div class="tc3-topbar"><div class="tc3-phone"></div><div class="tc3-icons"><span></span><span></span><span></span></div></div>
+            <div class="tc3-nav">
+              <div class="tc3-logo"><div class="tc3-logo-box"></div><div class="tc3-logo-text"><span></span><span></span></div></div>
+              <div class="tc3-navlinks"><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="tc3-hero">
+              <div class="tc3-hero-l">
+                <div class="tc3-hl1"></div><div class="tc3-hl2"></div>
+                <div class="tc3-red"></div>
+                <div class="tc3-sub1"></div><div class="tc3-sub2"></div>
+                <div class="tc3-call"></div>
+              </div>
+              <div class="tc3-form">
+                <div class="tc3-ftitle"></div>
+                <div class="tc3-fld"></div><div class="tc3-fld"></div><div class="tc3-fld"></div><div class="tc3-fld"></div>
+                <div class="tc3-send"></div>
+              </div>
+            </div>
+            <div class="tc3-trust"><div class="tc3-trust-lbl"></div><div class="tc3-trust-div"></div><div class="tc3-trust-loc"></div><div class="tc3-trust-div"></div><div class="tc3-trust-loc"></div></div>
+          </div>
+          <span class="template-badge">Contractor</span>
+          <div class="template-meta">
+            <h3>Design Template 3</h3>
+            <p>Professional white &amp; red layout for contractors and trades.</p>
+          </div>
+        </div>
+
+        <!-- Template 4: Photography (deep blue minimal) -->
+        <div class="template-card reveal" data-template="template4">
+          <div class="tc-art tc-art-4">
+            <div class="tc4-nav"><span class="tc4-logo"></span><div class="tc4-navlinks"><span></span><span></span><span></span></div><div class="tc4-cta"></div></div>
+            <div class="tc4-hero">
+              <div class="tc4-label"></div>
+              <div class="tc4-h1"></div>
+              <div class="tc4-h2"></div>
+              <div class="tc4-sub"></div>
+            </div>
+            <div class="tc4-gallery">
+              <div class="tc4-g1">📷</div>
+              <div class="tc4-g2"></div>
+              <div class="tc4-g3"></div>
+              <div class="tc4-g4"></div>
+              <div class="tc4-g5"></div>
+            </div>
+          </div>
+          <span class="template-badge">Photography</span>
+          <div class="template-meta">
+            <h3>Design Template 4</h3>
+            <p>Minimal deep-blue portfolio for photographers and creatives.</p>
+          </div>
+        </div>
+
+        <!-- Template 5: Fitness (dark red bold) -->
+        <div class="template-card reveal" data-template="template5">
+          <div class="tc-art tc-art-5">
+            <div class="tc5-nav">
+              <div class="tc5-logo"><div class="tc5-bar"></div><div class="tc5-logotext"></div></div>
+              <div class="tc5-navlinks"><span></span><span></span><span></span></div>
+              <div class="tc5-join"></div>
+            </div>
+            <div class="tc5-hero">
+              <div class="tc5-tag"></div>
+              <div class="tc5-h1"></div>
+              <div class="tc5-h2"></div>
+              <div class="tc5-sub"></div>
+              <div class="tc5-btns"><div class="tc5-cta"></div><div class="tc5-ghost"></div></div>
+              <div class="tc5-stats">
+                <div><div class="tc5-statnum"></div><div class="tc5-statlbl"></div></div>
+                <div><div class="tc5-statnum"></div><div class="tc5-statlbl"></div></div>
+                <div><div class="tc5-statnum"></div><div class="tc5-statlbl"></div></div>
+              </div>
+            </div>
+            <div class="tc5-classes">
+              <div class="tc5-cls"><div class="tc5-cls-name"></div><div class="tc5-cls-time"></div><div class="tc5-cls-btn"></div></div>
+              <div class="tc5-cls"><div class="tc5-cls-name"></div><div class="tc5-cls-time"></div><div class="tc5-cls-btn"></div></div>
+            </div>
+          </div>
+          <span class="template-badge">Fitness</span>
+          <div class="template-meta">
+            <h3>Design Template 5</h3>
+            <p>Bold red &amp; dark energy for gyms and personal training studios.</p>
+          </div>
+        </div>
+
+        <!-- Template 6: Real Estate (teal/dark) -->
+        <div class="template-card reveal" data-template="template6">
+          <div class="tc-art tc-art-6">
+            <div class="tc6-nav">
+              <div class="tc6-logo"><div class="tc6-icon">🏠</div><div class="tc6-logotext"><span></span><span></span></div></div>
+              <div class="tc6-navlinks"><span></span><span></span><span></span></div>
+              <div class="tc6-ctaBtn"></div>
+            </div>
+            <div class="tc6-hero">
+              <div class="tc6-label"></div>
+              <div class="tc6-h1"></div>
+              <div class="tc6-h2"></div>
+              <div class="tc6-search"><div class="tc6-search-btn"></div></div>
+              <div class="tc6-pills"><div class="tc6-pill"></div><div class="tc6-pill tc6-pill-off"></div><div class="tc6-pill tc6-pill-off"></div></div>
+            </div>
+            <div class="tc6-listings">
+              <div class="tc6-listing"><div class="tc6-listing-img"></div><div class="tc6-listing-body"><div class="tc6-price"></div><div class="tc6-detail"></div><div class="tc6-loc"></div></div></div>
+              <div class="tc6-listing"><div class="tc6-listing-img"></div><div class="tc6-listing-body"><div class="tc6-price"></div><div class="tc6-detail"></div><div class="tc6-loc"></div></div></div>
+              <div class="tc6-listing"><div class="tc6-listing-img"></div><div class="tc6-listing-body"><div class="tc6-price"></div><div class="tc6-detail"></div><div class="tc6-loc"></div></div></div>
+            </div>
+          </div>
+          <span class="template-badge">Real Estate</span>
+          <div class="template-meta">
+            <h3>Design Template 6</h3>
+            <p>Sleek teal &amp; dark for real estate agents and property listings.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="templates-note reveal">Every layout is fully previewable — click any card to see it come to life, then imagine it built around your brand.</p>
+    </div>
+
+    <div class="template-modal" id="templateModal" aria-hidden="true">
+      <div class="template-modal-backdrop" data-close></div>
+      <div class="template-modal-panel" role="dialog" aria-modal="true" aria-labelledby="templateModalTitle">
+        <button type="button" class="template-modal-close" aria-label="Close preview">×</button>
+        <div class="template-modal-header">
+          <span class="template-badge modal-badge"></span>
+          <h3 id="templateModalTitle"></h3>
+          <p class="template-modal-copy"></p>
+        </div>
+        <div class="template-modal-preview"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Keen Website Design. Built with care.</p>
+    </footer>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
