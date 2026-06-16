@@ -1,934 +1,816 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kachina Koncepts &mdash; The Woodlands, Magnolia &amp; Houston TX</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dale Mercer Contracting | Built Right. Built to Last.</title>
+  <meta name="description" content="Dale Mercer Contracting — Licensed & Insured general contractor. Specializing in remodeling, new construction, and commercial work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #3B6EA5;
+      --primary-dark: #2D5A8E;
+      --secondary: #F59E0B;
+      --secondary-dark: #D97706;
+      --bg: #F4F4F2;
+      --bg-alt: #FFFFFF;
+      --text-dark: #1A2332;
+      --text-mid: #4A5568;
+      --text-light: #718096;
+      --border: #C8D4E0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,.09);
+      --shadow-md: 0 4px 18px rgba(0,0,0,.13);
+      --r: 3px;
+      --nav-h: 70px;
+      --max: 1160px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.65; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button, input, textarea { font-family: inherit; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .section { padding: 88px 0; }
+
+    h2, h3 { font-family: 'Merriweather', Georgia, serif; }
+
+    .section-label {
+      display: block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .13em; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 8px;
+    }
+    .section-title { font-size: 2rem; font-weight: 700; line-height: 1.25; color: var(--text-dark); margin-bottom: 10px; }
+    .section-sub { font-size: 1rem; color: var(--text-mid); line-height: 1.75; }
+    .rule { width: 48px; height: 3px; background: var(--secondary); margin: 12px 0 26px; }
+    .rule.c { margin: 12px auto 26px; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 12px 28px; font-size: .9375rem; font-weight: 600;
+      border-radius: var(--r); border: 2px solid transparent;
+      cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .btn-gold { background: var(--secondary); color: #1A2332; border-color: var(--secondary); }
+    .btn-gold:hover { background: var(--secondary-dark); border-color: var(--secondary-dark); }
+    .btn-outline { background: transparent; color: var(--text-dark); border-color: rgba(255,255,255,.55); color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+    .btn-primary-ol { background: transparent; color: var(--primary); border-color: var(--primary); }
+    .btn-primary-ol:hover { background: var(--primary); color: #fff; }
+
+    /* ===== TOP BAR ===== */
+    .topbar {
+      background: var(--primary-dark); color: rgba(255,255,255,.78);
+      font-size: .8rem; padding: 9px 0;
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topbar a { color: rgba(255,255,255,.85); transition: color .2s; }
+    .topbar a:hover { color: #fff; }
+    .topbar-right { display: flex; gap: 24px; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky; top: 0; z-index: 900;
+      background: #fff;
+      border-bottom: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 20px; }
+
+    .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .logo-icon {
+      width: 46px; height: 46px; background: var(--primary);
+      border: 3px solid var(--primary-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Merriweather', serif; font-size: .95rem; font-weight: 900;
+      color: #fff; flex-shrink: 0;
+    }
+    .logo-name { font-size: 1rem; font-weight: 700; color: var(--text-dark); line-height: 1.15; font-family: 'Merriweather', serif; }
+    .logo-sub { font-size: .62rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: .08em; }
+
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a {
+      padding: 8px 13px; font-size: .875rem; font-weight: 500;
+      color: var(--text-mid); border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-links a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-phone { font-size: .875rem; font-weight: 600; color: var(--primary); white-space: nowrap; }
+    .nav-right .btn { padding: 9px 20px; font-size: .84rem; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-dark); transition: .25s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+      background: #fff; border-bottom: 2px solid var(--border);
+      padding: 16px 28px 24px; z-index: 899; box-shadow: var(--shadow-md);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; padding: 12px 0; font-size: .95rem; font-weight: 500; color: var(--text-mid); border-bottom: 1px solid #e4e4e4; transition: color .2s; }
+    .mobile-nav a:last-of-type { border: none; }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav .btn { margin-top: 16px; width: 100%; justify-content: center; }
+
+    /* ===== HERO ===== */
+    #hero { position: relative; min-height: 580px; display: flex; flex-direction: column; overflow: hidden; }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+      filter: brightness(.38);
+    }
+    .hero-body { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
+    .hero-inner { flex: 1; padding: 80px 0 52px; }
+
+    .hero-badge {
+      display: inline-block; background: var(--secondary);
+      color: var(--text-dark); font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; padding: 5px 14px;
+      margin-bottom: 22px;
+    }
+    .hero-h1 { font-family: 'Merriweather', Georgia, serif; font-size: 3.25rem; font-weight: 900; color: #fff; line-height: 1.12; margin-bottom: 16px; }
+    .hero-rule { width: 52px; height: 4px; background: var(--secondary); margin: 0 0 20px; }
+    .hero-p { font-size: 1.075rem; color: rgba(255,255,255,.82); max-width: 500px; line-height: 1.72; margin-bottom: 34px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-btns .btn { padding: 14px 30px; }
+
+    .hero-trust {
+      position: relative; z-index: 1;
+      background: rgba(20,32,52,.7);
+      border-top: 3px solid var(--secondary);
+    }
+    .hero-trust-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .htrust {
+      padding: 22px 16px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .htrust:last-child { border-right: none; }
+    .htrust-val { font-family: 'Merriweather', serif; font-size: 1.35rem; font-weight: 700; color: var(--secondary); line-height: 1; margin-bottom: 5px; }
+    .htrust-lbl { font-size: .7rem; color: rgba(255,255,255,.58); text-transform: uppercase; letter-spacing: .07em; }
+
+    /* ===== SERVICES ===== */
+    #services { background: #fff; }
+
+    .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 36px; }
+
+    .svc-card {
+      padding: 26px 26px 26px 22px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      background: var(--bg);
+      transition: border-left-color .2s;
+    }
+    .svc-card:hover { border-left-color: var(--secondary); }
+
+    .svc-num { font-size: .68rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
+    .svc-title { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+    .svc-desc { font-size: .91rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 14px; }
+    .svc-list { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .svc-list li { display: flex; align-items: center; gap: 9px; font-size: .83rem; color: var(--text-mid); }
+    .svc-list li::before { content: '—'; color: var(--secondary); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--bg); }
+
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+
+    .about-img { width: 100%; height: 460px; object-fit: cover; border: 4px solid #fff; box-shadow: var(--shadow-md); display: block; }
+    .about-cred {
+      background: var(--primary); color: #fff;
+      padding: 14px 20px; display: flex; gap: 18px; flex-wrap: wrap;
+    }
+    .about-cred span { font-size: .78rem; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+    .about-cred span::before { content: '✓'; color: var(--secondary); }
+
+    .about-p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); margin: 22px 0 26px; }
+    .astat { padding: 18px 14px; text-align: center; border-right: 1px solid var(--border); }
+    .astat:last-child { border-right: none; }
+    .astat-val { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 4px; }
+    .astat-lbl { font-size: .7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ===== GALLERY ===== */
+    #projects { background: #fff; }
+
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .gitem { position: relative; overflow: hidden; cursor: zoom-in; background: #ddd; }
+    .gitem img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: transform .4s ease; }
+    .gitem:hover img { transform: scale(1.05); }
+    .gitem:nth-child(1), .gitem:nth-child(5) { grid-column: span 2; }
+    .gitem:nth-child(1) img, .gitem:nth-child(5) img { aspect-ratio: 2/1; }
+
+    .gov {
+      position: absolute; inset: 0;
+      background: rgba(20,35,55,.62);
+      opacity: 0; transition: opacity .3s ease;
+      display: flex; align-items: flex-end; padding: 14px 16px;
+    }
+    .gitem:hover .gov { opacity: 1; }
+    .gov span { color: #fff; font-size: .875rem; font-weight: 600; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: var(--primary-dark); }
+
+    .tlist { display: flex; flex-direction: column; }
+    .titem {
+      display: grid; grid-template-columns: 56px 1fr; gap: 28px; align-items: start;
+      padding: 48px 0; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .titem:last-child { border-bottom: none; }
+    .tquotemark { font-family: Georgia, serif; font-size: 5.5rem; line-height: .85; color: var(--secondary); opacity: .4; user-select: none; padding-top: 6px; }
+    .tstars { display: flex; gap: 2px; color: var(--secondary); font-size: 1rem; margin-bottom: 12px; }
+    .tquote { font-size: 1.0625rem; line-height: 1.78; color: rgba(255,255,255,.88); font-style: italic; margin-bottom: 18px; }
+    .tname { font-weight: 700; font-size: .93rem; color: #fff; margin-bottom: 2px; }
+    .tloc { font-size: .79rem; color: rgba(255,255,255,.5); }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--bg); }
+
+    .contact-info-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border); background: #fff; margin-bottom: 48px;
+    }
+    .ci-item { padding: 22px 20px; border-right: 1px solid var(--border); }
+    .ci-item:last-child { border-right: none; }
+    .ci-lbl { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--primary); margin-bottom: 5px; }
+    .ci-val { font-size: .9375rem; font-weight: 600; color: var(--text-dark); }
+    .ci-val a { color: var(--primary); }
+    .ci-val a:hover { text-decoration: underline; }
+    .ci-sub { font-size: .79rem; color: var(--text-light); margin-top: 3px; }
+
+    .contact-form-wrap { max-width: 740px; margin: 0 auto; background: #fff; border: 1px solid var(--border); padding: 48px 52px; }
+    .cform-title { font-size: 1.45rem; font-weight: 700; margin-bottom: 6px; }
+    .cform-sub { font-size: .9375rem; color: var(--text-mid); margin-bottom: 28px; }
+
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .fg label { font-size: .83rem; font-weight: 600; color: var(--text-dark); }
+    .fg input, .fg textarea {
+      padding: 11px 13px; background: #fff;
+      border: 1px solid var(--border); border-radius: 0;
+      font-size: .9375rem; color: var(--text-dark);
+      transition: border-color .2s; outline: none; width: 100%;
+    }
+    .fg input::placeholder, .fg textarea::placeholder { color: var(--text-light); }
+    .fg input:focus, .fg textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(59,110,165,.1); }
+    .fg textarea { resize: vertical; min-height: 120px; }
+    .fsub { width: 100%; justify-content: center; padding: 14px; font-size: .975rem; border-radius: 0; }
+
+    /* ===== FOOTER ===== */
+    footer { background: #1A2332; color: rgba(255,255,255,.52); }
+    .foot-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+      padding: 64px 0 48px; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .foot-brand { display: flex; flex-direction: column; gap: 16px; }
+    .foot-logo { display: flex; align-items: center; gap: 12px; }
+    .foot-logo-icon {
+      width: 44px; height: 44px; background: var(--primary);
+      border: 2px solid var(--primary-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Merriweather', serif; font-size: .9rem; font-weight: 900; color: #fff;
+    }
+    .foot-logo-name { font-size: .95rem; font-weight: 700; color: #fff; font-family: 'Merriweather', serif; }
+    .foot-tagline { font-size: .875rem; line-height: 1.72; max-width: 280px; }
+    .foot-contact { font-size: .875rem; }
+    .foot-contact a { color: rgba(255,255,255,.62); transition: color .2s; }
+    .foot-contact a:hover { color: var(--secondary); }
+
+    .foot-col-title {
+      font-size: .7rem; font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: .1em; margin-bottom: 18px;
+      padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .foot-links { display: flex; flex-direction: column; gap: 11px; }
+    .foot-links a { font-size: .875rem; color: rgba(255,255,255,.48); transition: color .2s; }
+    .foot-links a:hover { color: var(--secondary); }
+
+    .foot-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: .8rem; flex-wrap: wrap; gap: 10px; }
+
+    /* ===== LIGHTBOX ===== */
+    .lb {
+      position: fixed; inset: 0; background: rgba(0,0,0,.92);
+      z-index: 2000; display: flex; align-items: center; justify-content: center;
+      padding: 24px; opacity: 0; pointer-events: none; transition: opacity .3s ease;
+    }
+    .lb.open { opacity: 1; pointer-events: all; }
+    .lb img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+    .lb-close {
+      position: absolute; top: 16px; right: 20px; width: 40px; height: 40px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 0; color: #fff; font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s;
+    }
+    .lb-close:hover { background: rgba(255,255,255,.22); }
+
+    /* ===== ANIMATIONS ===== */
+    .fu { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .fu.vis { opacity: 1; transform: none; }
+    .fu:nth-child(2) { transition-delay: .09s; }
+    .fu:nth-child(3) { transition-delay: .17s; }
+    .fu:nth-child(4) { transition-delay: .25s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-trust-inner { grid-template-columns: repeat(2, 1fr); }
+      .htrust:nth-child(2) { border-right: none; }
+      .htrust:nth-child(3) { border-top: 1px solid rgba(255,255,255,.1); }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-info-row { grid-template-columns: repeat(2, 1fr); }
+      .ci-item:nth-child(2) { border-right: none; }
+      .ci-item:nth-child(3), .ci-item:nth-child(4) { border-top: 1px solid var(--border); }
+      .ci-item:nth-child(4) { border-right: none; }
+      .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .foot-brand { grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 62px; }
+      .topbar { display: none; }
+      .section { padding: 64px 0; }
+      .nav-links, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .hero-h1 { font-size: 2.2rem; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .gitem:nth-child(1), .gitem:nth-child(5) { grid-column: span 2; }
+      .titem { grid-template-columns: 1fr; gap: 12px; }
+      .tquotemark { display: none; }
+      .contact-info-row { grid-template-columns: 1fr; }
+      .ci-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .ci-item:last-child { border-bottom: none; }
+      .ci-item:nth-child(3), .ci-item:nth-child(4) { border-top: none; }
+      .contact-form-wrap { padding: 30px 22px; }
+      .frow { grid-template-columns: 1fr; }
+      .foot-top { grid-template-columns: 1fr; gap: 32px; padding: 48px 0 36px; }
+      .foot-brand { grid-column: span 1; }
+      .foot-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 1.8rem; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { justify-content: center; }
+      .gallery { grid-template-columns: 1fr; }
+      .gitem:nth-child(n) { grid-column: span 1; }
+      .gitem:nth-child(n) img { aspect-ratio: 16/9; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .astat:first-child { grid-column: span 2; border-right: none; border-bottom: 1px solid var(--border); }
+      .contact-form-wrap { padding: 24px 16px; }
+      .hero-trust-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <img src="updatedkachinalogo.png" alt="Kachina Koncepts" class="logo-img" />
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <span>Licensed &amp; Insured &middot; IL Contractor Lic. #XXXXXXX &middot; Est. 2004</span>
+      <div class="topbar-right">
+        <a href="tel:+15551234567">(555) 123-4567</a>
+        <a href="mailto:dale@dalemercercontracting.com">dale@dalemercercontracting.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#hero" class="logo">
+        <div class="logo-icon">DM</div>
+        <div>
+          <div class="logo-name">Dale Mercer Contracting</div>
+          <div class="logo-sub">General Contractor &mdash; Central Illinois</div>
+        </div>
       </a>
-      <div class="nav-links" id="navLinks">
-        <button class="nav-link active" data-tab="home">Home</button>
-        <button class="nav-link" data-tab="services">Services</button>
-        <button class="nav-link" data-tab="design" style="display:none">Design</button>
-        <button class="nav-link" data-tab="blog">Blog</button>
-        <button class="nav-link" data-tab="portfolio">Portfolio</button>
-        <button class="nav-link" data-tab="contact">Contact</button>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
       <div class="nav-right">
-        <button class="nav-cta" onclick="switchTab('contact')">Get a Free Quote</button>
-        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="tel:+15551234567" class="nav-phone">&#128222; (555) 123-4567</a>
+        <a href="#contact" class="btn btn-gold">Free Quote</a>
       </div>
-    </div>
-    <div class="nav-mobile-drawer" id="mobileDrawer">
-      <button class="nav-link" data-tab="home">Home</button>
-      <button class="nav-link" data-tab="services">Services</button>
-      <button class="nav-link" data-tab="design" style="display:none">Design</button>
-      <button class="nav-link" data-tab="blog">Blog</button>
-      <button class="nav-link" data-tab="portfolio">Portfolio</button>
-      <button class="nav-link" data-tab="contact">Contact</button>
-      <button class="nav-cta drawer-cta" onclick="switchTab('contact');closeMobileMenu()">Get a Free Quote</button>
-    </div>
-  </nav>
-
-  <!-- Mountain hero banner -->
-  <div class="mountain-banner" aria-hidden="true">
-    <div class="mb-img"></div>
-    <div class="mb-color-overlay"></div>
-    <div class="mb-mist"></div>
-    <div class="mb-peak-shimmer"></div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
   </div>
+</header>
 
-  <!-- ===== HOME PAGE ===== -->
-  <section id="home" class="page">
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-gold">Get a Free Quote &rarr;</a>
+</div>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="hero-content">
-        <span class="hero-badge">Local Web Developer &mdash; Houston Area</span>
-        <p class="hero-brand-name">Kachina Koncepts</p>
-        <h1>Professional Custom<br>Website Design</h1>
-        <p class="hero-sub">Serving The Woodlands, Magnolia &amp; Greater Houston Area</p>
-        <button class="btn-primary" onclick="switchTab('contact')">Get a Free Quote &rarr;</button>
-      </div>
-    </div>
-
-    <!-- Features -->
-    <div class="features-section">
-      <div class="section-container">
-        <div class="section-header reveal">
-          <p class="section-tag">What We Offer</p>
-          <h2 class="dark-heading">Everything Your Business Needs Online</h2>
-        </div>
-        <div class="features-grid reveal">
-          <div class="feature-card">
-            <div class="feature-icon">&#128421;</div>
-            <h3>Custom Website Design</h3>
-            <p>Modern, responsive designs built from scratch to represent your brand &mdash; no templates, no shortcuts.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#128241;</div>
-            <h3>Mobile-Friendly</h3>
-            <p>Every site looks perfect on phones, tablets, and desktops. Mobile-first is not optional, it's the standard.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#128269;</div>
-            <h3>SEO Ready</h3>
-            <p>Built with clean code and proper structure so Google can find you and customers can reach you.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#9889;</div>
-            <h3>Fast Turnaround</h3>
-            <p>Local developer, direct communication, quick delivery. Most sites go live in under 2 weeks.</p>
-          </div>
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-body">
+    <div class="hero-inner">
+      <div class="container">
+        <div class="hero-badge">Licensed &amp; Insured &middot; Central Illinois</div>
+        <h1 class="hero-h1">Built Right.<br>Built to Last.</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-p">From ground-up construction to complete home transformations — Dale Mercer Contracting delivers craftsmanship you can trust, on time and within budget.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-gold">Get a Free Quote &rarr;</a>
+          <a href="#projects" class="btn btn-outline">View Our Work</a>
         </div>
       </div>
     </div>
-
-    <!-- Why Kachina Koncepts -->
-    <div class="why-section">
-      <div class="section-container">
-        <div class="section-header reveal">
-          <p class="section-tag">Why Us</p>
-          <h2>Why Kachina Koncepts?</h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="why-check">&#10003;</div>
-            <h3>Local &amp; Personal</h3>
-            <p>Based in The Woodlands &amp; Magnolia TX. You work directly with the developer &mdash; not a middleman or agency.</p>
+    <div class="hero-trust">
+      <div class="container">
+        <div class="hero-trust-inner">
+          <div class="htrust">
+            <div class="htrust-val">500+</div>
+            <div class="htrust-lbl">Projects Completed</div>
           </div>
-          <div class="why-card reveal">
-            <div class="why-check">&#10003;</div>
-            <h3>Affordable Pricing</h3>
-            <p>Professional quality without the agency price tag. Transparent quotes and no hidden fees &mdash; ever.</p>
+          <div class="htrust">
+            <div class="htrust-val">4.9 / 5</div>
+            <div class="htrust-lbl">Client Rating</div>
           </div>
-          <div class="why-card reveal">
-            <div class="why-check">&#10003;</div>
-            <h3>Fast Turnaround</h3>
-            <p>Most projects completed in 1&ndash;2 weeks, not months. Local developer, direct communication, fast delivery.</p>
+          <div class="htrust">
+            <div class="htrust-val">Fully</div>
+            <div class="htrust-lbl">Licensed &amp; Insured</div>
           </div>
-          <div class="why-card reveal">
-            <div class="why-check">&#10003;</div>
-            <h3>Built for Results</h3>
-            <p>Every site is mobile-first, SEO-ready, and designed to convert visitors into real customers.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="why-check">&#10003;</div>
-            <h3>Direct Communication</h3>
-            <p>No ticket systems, no waiting in line. You'll always reach us directly &mdash; real responses, fast.</p>
+          <div class="htrust">
+            <div class="htrust-val">Since 2004</div>
+            <div class="htrust-lbl">Serving the Region</div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- About / Local -->
-    <div class="about-local">
-      <div class="section-container reveal">
-        <p class="section-tag">About</p>
-        <h2>Local Web Developer Serving<br>The Woodlands &amp; Magnolia TX</h2>
-        <p>Based in the Houston area, Kachina Koncepts specializes in building professional websites for local businesses in The Woodlands, Magnolia, Spring, and surrounding communities. Every site is hand-coded, mobile-ready, and built to help you get found online &mdash; without the agency price tag.</p>
-      </div>
-    </div>
-
-    <!-- CTA Strip -->
-    <div class="cta-strip">
-      <div class="section-container reveal">
-        <h2>Ready to Get Started?</h2>
-        <p>Let's build something you're proud to share with customers.</p>
-        <button class="btn-outline" onclick="switchTab('contact')">Get a Free Quote &rarr;</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <!-- ===== SERVICES PAGE ===== -->
-  <section id="services" class="page">
-
-    <div class="page-header">
-      <p class="section-tag reveal">Services</p>
-      <h1 class="reveal">What We Build</h1>
-      <p class="reveal">From a single landing page to a full business site &mdash; every project is hand-coded, fast, and built to last.</p>
-    </div>
-
-    <div class="section-container services-wrap">
-      <div class="services-grid reveal">
-
-        <div class="service-card">
-          <div class="service-icon">&#127760;</div>
-          <h3>Custom Websites</h3>
-          <p>Fully hand-coded in HTML, CSS, and JavaScript &mdash; no page builders, no bloat. Built to your exact brand.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128196;</div>
-          <h3>Landing Pages</h3>
-          <p>High-converting single-page sites for campaigns, promos, or new business launches. Fast to build, fast to load.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#127962;</div>
-          <h3>Business Websites</h3>
-          <p>Multi-page professional sites (5&ndash;10 pages) covering your services, about section, contact, and more.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#127912;</div>
-          <h3>Portfolio Sites</h3>
-          <p>Showcase your work with a clean, modern site that lets your projects speak for themselves.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128717;</div>
-          <h3>Product &amp; Menu Display</h3>
-          <p>Service catalogs, restaurant menus, product listings &mdash; beautifully laid out and easy to navigate.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128260;</div>
-          <h3>Website Redesigns</h3>
-          <p>Got an old or ugly site? We'll transform it into something you're proud to share with customers.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128241;</div>
-          <h3>Mobile Responsive</h3>
-          <p>Every site looks and works perfectly on phones, tablets, and desktops &mdash; no extra charge.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128269;</div>
-          <h3>SEO Optimization</h3>
-          <p>Proper structure, meta tags, semantic HTML, and fast load times so Google can actually find you.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#128236;</div>
-          <h3>Contact Forms</h3>
-          <p>Functional inquiry forms that capture leads and send them straight to your email or inbox.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">&#9889;</div>
-          <h3>Fast Delivery</h3>
-          <p>Most projects go live in under 2 weeks. Need it sooner? We can usually make it happen.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="cta-strip">
-      <div class="section-container reveal">
-        <h2>Not Sure Which Service Fits?</h2>
-        <p>Reach out and describe your business &mdash; we'll figure it out together.</p>
-        <button class="btn-outline" onclick="switchTab('contact')">Get in Touch &rarr;</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <!-- ===== DESIGN PAGE ===== -->
-  <section id="design" class="page">
-
-    <div class="page-header">
-      <p class="section-tag reveal">Templates</p>
-      <h1 class="reveal">Professional Website Templates<br>for Every Industry</h1>
-      <p class="reveal">Every design is fully customized to match your brand. These templates are just a starting point.</p>
-    </div>
-
-    <!-- Intro block -->
-    <div class="design-intro-wrap reveal">
-      <h2 class="design-intro-heading">Every Website We Build Is Uniquely Yours</h2>
-      <p class="design-intro-para">Your business deserves more than a generic template. At Kachina Koncepts, every site is custom-built around your brand, your goals, and your customers. That said, we've put together a collection of industry-specific design concepts to spark inspiration. Think of these not as limitations &mdash; but as a starting point. We take your vision, your industry, and your identity and craft something entirely your own.</p>
-      <div class="design-callouts">
-        <div class="design-callout accent">
-          <h4>Start From a Template</h4>
-          <p>Browse our design concepts below and tell us which direction speaks to you. We'll customize it completely to match your brand.</p>
-        </div>
-        <div class="design-callout dark">
-          <h4>Bring Your Own Vision</h4>
-          <p>Have something specific in mind? Perfect. Share your ideas and we'll bring them to life from scratch.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Template cards -->
-    <div class="section-container templates-section-wrap">
-      <div class="templates-grid">
-
-        <!-- 1: Construction -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-construction">
-              <div class="ms-nav ms-nav-construction">
-                <span class="ms-nav-logo">Apex Builders</span>
-                <div class="ms-nav-links">
-                  <span>Home</span><span>Services</span><span>Projects</span><span>Contact</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-construction">
-                <div class="ms-hero-h">Built to Last.<br>Built for You.</div>
-                <div class="ms-hero-sub">Licensed &bull; Insured &bull; Greater Houston Area</div>
-                <span class="ms-btn ms-btn-construction">Get a Free Quote</span>
-              </div>
-              <div class="ms-body ms-body-construction">
-                <div class="ms-service-row">
-                  <div class="ms-service-box ms-sbox-construction">Residential</div>
-                  <div class="ms-service-box ms-sbox-construction">Commercial</div>
-                  <div class="ms-service-box ms-sbox-construction">Industrial</div>
-                </div>
-              </div>
-              <div class="ms-footer-bar ms-footer-construction"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Construction &amp; Contractors</strong>
-            <span>Bold and professional for contractors and builders.</span>
-          </div>
-        </div>
-
-        <!-- 2: Law Office -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-legal">
-              <div class="ms-nav ms-nav-legal">
-                <span class="ms-nav-logo ms-logo-legal">Harmon Law Group</span>
-                <div class="ms-nav-links ms-nav-legal-links">
-                  <span>Practice Areas</span><span>About</span><span>Contact</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-legal">
-                <div class="ms-hero-h ms-hero-h-legal">Experienced.<br>Trusted. Relentless.</div>
-                <div class="ms-hero-sub ms-hero-sub-legal">Serving clients across the greater Houston area</div>
-                <span class="ms-btn ms-btn-legal">Schedule a Consultation</span>
-              </div>
-              <div class="ms-body ms-body-legal">
-                <div class="ms-legal-cols">
-                  <div class="ms-legal-left">
-                    <div class="ms-legal-vline"></div>
-                    <div class="ms-text-lines">
-                      <div class="ms-text-line"></div>
-                      <div class="ms-text-line ms-tl-short"></div>
-                      <div class="ms-text-line"></div>
-                      <div class="ms-text-line ms-tl-med"></div>
-                      <div class="ms-text-line ms-tl-short"></div>
-                    </div>
-                  </div>
-                  <div class="ms-legal-right">
-                    <div class="ms-legal-bullet">Family Law</div>
-                    <div class="ms-legal-bullet">Estate Planning</div>
-                    <div class="ms-legal-bullet">Business Law</div>
-                    <div class="ms-legal-bullet">Personal Injury</div>
-                  </div>
-                </div>
-              </div>
-              <div class="ms-footer-bar ms-footer-legal"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Law Office / Legal Services</strong>
-            <span>Refined and authoritative for legal professionals.</span>
-          </div>
-        </div>
-
-        <!-- 3: Hair Salon -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-salon">
-              <div class="ms-nav ms-nav-salon">
-                <span class="ms-nav-logo ms-logo-salon">Luxe Studio</span>
-                <div class="ms-nav-links ms-nav-salon-links">
-                  <span>Services</span><span>Gallery</span><span>Book Now</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-salon">
-                <div class="ms-hero-h ms-hero-h-salon">Where Beauty<br>Meets Confidence</div>
-                <div class="ms-hero-sub ms-hero-sub-salon">Hair &bull; Nails &bull; Skincare &bull; The Woodlands</div>
-                <span class="ms-btn ms-btn-salon">Book an Appointment</span>
-              </div>
-              <div class="ms-body ms-body-salon">
-                <div class="ms-salon-icons">
-                  <div class="ms-salon-item"><div class="ms-salon-circle"></div><span>Hair</span></div>
-                  <div class="ms-salon-item"><div class="ms-salon-circle"></div><span>Nails</span></div>
-                  <div class="ms-salon-item"><div class="ms-salon-circle"></div><span>Skincare</span></div>
-                </div>
-              </div>
-              <div class="ms-footer-bar ms-footer-salon"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Salon &amp; Beauty Spa</strong>
-            <span>Soft, elegant, and feminine for beauty businesses.</span>
-          </div>
-        </div>
-
-        <!-- 4: Restaurant -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-restaurant">
-              <div class="ms-nav ms-nav-restaurant">
-                <span class="ms-nav-logo ms-logo-restaurant">Casa Fuego</span>
-                <div class="ms-nav-links ms-nav-restaurant-links">
-                  <span>Menu</span><span>About</span><span>Reservations</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-restaurant">
-                <div class="ms-hero-h ms-hero-h-restaurant">Authentic Flavors.<br>Unforgettable Nights.</div>
-                <div class="ms-hero-sub ms-hero-sub-restaurant">Farm-to-fork dining &bull; Magnolia, TX</div>
-                <span class="ms-btn ms-btn-restaurant">View Our Menu</span>
-              </div>
-              <div class="ms-body ms-body-restaurant">
-                <div class="ms-menu-chips">
-                  <span class="ms-chip-restaurant">Starters</span>
-                  <span class="ms-chip-restaurant">Mains</span>
-                  <span class="ms-chip-restaurant">Desserts</span>
-                </div>
-                <div class="ms-dish-card"></div>
-              </div>
-              <div class="ms-footer-bar ms-footer-restaurant"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Restaurant &amp; Food Business</strong>
-            <span>Warm and inviting for restaurants and cafes.</span>
-          </div>
-        </div>
-
-        <!-- 5: Fitness -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-fitness">
-              <div class="ms-nav ms-nav-fitness">
-                <span class="ms-nav-logo ms-logo-fitness">FORGE FITNESS</span>
-                <div class="ms-nav-links ms-nav-fitness-links">
-                  <span>Programs</span><span>Coaches</span><span>Join Now</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-fitness">
-                <div class="ms-hero-h ms-hero-h-fitness">TRAIN HARDER.<br>LIVE BETTER.</div>
-                <div class="ms-hero-sub ms-hero-sub-fitness">Personal Training &bull; The Woodlands</div>
-                <span class="ms-btn ms-btn-fitness">Start Today</span>
-              </div>
-              <div class="ms-body ms-body-fitness">
-                <div class="ms-service-row">
-                  <div class="ms-service-box ms-sbox-fitness">Strength</div>
-                  <div class="ms-service-box ms-sbox-fitness">Cardio</div>
-                  <div class="ms-service-box ms-sbox-fitness">Nutrition</div>
-                </div>
-              </div>
-              <div class="ms-footer-bar ms-footer-fitness"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Fitness &amp; Personal Training</strong>
-            <span>Energetic and motivating for gyms and trainers.</span>
-          </div>
-        </div>
-
-        <!-- 6: Real Estate -->
-        <div class="tpl-card-wrap">
-          <div class="tpl-card">
-            <span class="tpl-ribbon">Template Available</span>
-            <div class="mini-site mini-site-realestate">
-              <div class="ms-nav ms-nav-realestate">
-                <span class="ms-nav-logo ms-logo-realestate">Clearview Realty</span>
-                <div class="ms-nav-links ms-nav-realestate-links">
-                  <span>Listings</span><span>Buy</span><span>Sell</span><span>Contact</span>
-                </div>
-              </div>
-              <div class="ms-hero ms-hero-realestate">
-                <div class="ms-hero-h ms-hero-h-realestate">Find Your Perfect<br>Home in Houston</div>
-                <div class="ms-hero-sub ms-hero-sub-realestate">Trusted real estate &bull; Houston area</div>
-                <span class="ms-btn ms-btn-realestate">Browse Listings</span>
-              </div>
-              <div class="ms-body ms-body-realestate">
-                <div class="ms-property-row">
-                  <div class="ms-property-card">
-                    <div class="ms-property-img ms-pimg-1"></div>
-                    <div class="ms-property-info"><div class="ms-prop-line"></div><div class="ms-prop-line ms-prop-price"></div></div>
-                  </div>
-                  <div class="ms-property-card">
-                    <div class="ms-property-img ms-pimg-2"></div>
-                    <div class="ms-property-info"><div class="ms-prop-line"></div><div class="ms-prop-line ms-prop-price"></div></div>
-                  </div>
-                  <div class="ms-property-card">
-                    <div class="ms-property-img ms-pimg-3"></div>
-                    <div class="ms-property-info"><div class="ms-prop-line"></div><div class="ms-prop-line ms-prop-price"></div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="ms-footer-bar ms-footer-realestate"></div>
-            </div>
-          </div>
-          <div class="tpl-card-meta">
-            <strong>Real Estate Agent</strong>
-            <span>Clean and trustworthy &mdash; lets your listings shine.</span>
-          </div>
-        </div>
-
-      </div><!-- /templates-grid -->
-    </div><!-- /section-container -->
-
-    <div class="cta-strip" style="margin-top:4rem">
-      <div class="section-container reveal">
-        <h2>Don't See Your Industry?</h2>
-        <p>We build websites for every type of business. Reach out and tell us about your project &mdash; we'll create something custom just for you.</p>
-        <button class="btn-outline" onclick="switchTab('contact')">Start Your Project &rarr;</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <!-- ===== BLOG PAGE ===== -->
-  <section id="blog" class="page">
-
-    <div class="page-header">
-      <p class="section-tag reveal">Blog</p>
-      <h1 class="reveal">Web Design Insights</h1>
-      <p class="reveal">Tips, guides, and real advice to help your local business grow online.</p>
-    </div>
-
-    <div class="section-container blog-section-wrap">
-
-      <div class="blog-card-grid reveal">
-
-        <!-- Card 1 -->
-        <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-blue">&#127760;</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Business Growth</span>
-            <h3>10 Reasons Your Business Needs a Website in 2026</h3>
-            <p class="blog-excerpt">81% of consumers research a business online before making a purchase. If you're not online, you're invisible &mdash; and your competitors aren't.</p>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-green">&#9881;</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Web Design</span>
-            <h3>What Makes a Good Small Business Website?</h3>
-            <p class="blog-excerpt">Not all websites are created equal. Here's what separates a forgettable business site from one that actually converts visitors into customers.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-amber">&#128176;</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Pricing &amp; Value</span>
-            <h3>How Much Does a Website Cost for a Small Business in 2026?</h3>
-            <p class="blog-excerpt">DIY builders, freelancers, agencies &mdash; the price range is massive. Here's how to figure out what's right for your business without overpaying.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="blog-expand-wrap reveal">
-        <button id="blogExpandBtn" class="btn-primary" onclick="expandAllArticles()">Read All Articles &rarr;</button>
-      </div>
-
-      <!-- Expanded full articles -->
-      <div class="blog-articles-expanded" id="blogArticlesExpanded">
-
-        <!-- ── Article 1 ── -->
-        <article class="blog-article-item">
-          <div class="blog-article-header">
-            <span class="blog-tag">Business Growth</span>
-            <h2>10 Reasons Your Business Needs a Website in 2026</h2>
-            <p class="blog-article-meta">By Kachina Koncepts &bull; 6 min read</p>
-          </div>
-          <div class="blog-article-content">
-            <p>In today's digital-first economy, having a website is no longer optional for businesses that want to grow. Whether you run a hair salon, a law office, a restaurant, or a contracting company &mdash; your potential customers are searching for you online right now. Here are ten compelling reasons why your business needs a professional website in 2026.</p>
-
-            <h3>1. 81% of Consumers Research Online Before Buying</h3>
-            <p>Before customers walk through your door or pick up the phone, they're searching for you online. Research shows that 81% of shoppers conduct online research before making a purchasing decision. If you don't have a website, you're invisible to the majority of your potential customers before the conversation even begins.</p>
-
-            <h3>2. 28% of Small Businesses Still Don't Have a Website</h3>
-            <p>That's both a warning and an opportunity. If you're among the 28% without a website, you're handing customers directly to your competitors. And if you're already online &mdash; your competitors without websites are handing those customers to you. The gap between businesses that invest in web presence and those that don't continues to widen every year.</p>
-
-            <h3>3. Businesses With Websites Grow Revenue Up to 2x Faster</h3>
-            <p>Research from Deloitte found that small businesses with a strong online presence grow their revenues up to twice as fast as those without. A website opens the door to new customer discovery, online booking, lead capture, and direct sales &mdash; revenue streams that simply don't exist without one.</p>
-
-            <h3>4. Your Website Works 24/7 &mdash; Even When You're Closed</h3>
-            <p>Your store closes. Your phone goes unanswered after 5 PM. But your website never clocks out. A well-built website answers common questions, showcases your services, captures leads, and builds trust around the clock &mdash; making it the hardest-working member of your team, at a fraction of the cost.</p>
-
-            <h3>5. 75% of Users Judge Your Credibility by Your Website Design</h3>
-            <p>Stanford Web Credibility Research found that 75% of users admit to judging a company's credibility based on its website design alone. A poorly designed or outdated site signals unprofessionalism before a visitor reads a single word. A polished, modern website signals legitimacy, experience, and trustworthiness &mdash; before you even speak to the customer.</p>
-
-            <h3>6. Local SEO Helps Customers Find You Nearby</h3>
-            <p>More than 46% of all Google searches have local intent. People are searching "hair salon near me," "best contractor in The Woodlands," and "restaurant in Magnolia TX" every single day. Without a website optimized for local search, your business doesn't appear in these results &mdash; and a competitor does.</p>
-
-            <h3>7. A Website Builds Trust and Legitimacy</h3>
-            <p>When someone hears about your business for the first time, the first thing they do is Google it. If nothing comes up &mdash; or if your only presence is a Facebook page &mdash; many potential customers will question whether you're fully established. A professional website with your services, photos, and contact information instantly builds credibility and answers doubts before they form.</p>
-
-            <h3>8. Social Media Is Not a Substitute</h3>
-            <p>Facebook and Instagram are valuable marketing tools, but they are not owned platforms. If Meta changes its algorithm, restricts your reach, or suffers an outage &mdash; your audience disappears with it. Your website is yours. It's the one digital asset you fully own and control, and it should be the hub of your entire online presence.</p>
-
-            <h3>9. Online Booking and E-Commerce Turn Your Site Into a Revenue Stream</h3>
-            <p>A website can do far more than share information &mdash; it can actively generate revenue. Online appointment booking captures clients outside business hours and reduces phone tag. E-commerce functionality lets product-based businesses sell directly to customers 24/7. These features often pay for a website's entire cost within the first few months of launch.</p>
-
-            <h3>10. Level the Playing Field With Larger Competitors</h3>
-            <p>A well-designed, professional website allows a small local business to look just as credible and polished as a national brand. You don't need a massive advertising budget &mdash; you need a great website. In 2026, the businesses investing in a professional web presence are the ones gaining market share. The ones without one are losing it to whoever shows up in the search results instead.</p>
-          </div>
-        </article>
-
-        <!-- ── Article 2 ── -->
-        <article class="blog-article-item">
-          <div class="blog-article-header">
-            <span class="blog-tag">Web Design</span>
-            <h2>What Makes a Good Small Business Website?</h2>
-            <p class="blog-article-meta">By Kachina Koncepts &bull; 5 min read</p>
-          </div>
-          <div class="blog-article-content">
-            <p>Not all websites are created equal. A basic site that lists your phone number is very different from a high-performing site that builds trust, captures leads, and converts visitors into paying customers. So what separates a mediocre business website from a great one? Here's what matters most.</p>
-
-            <h3>Clean, Professional Design</h3>
-            <p>First impressions are formed in milliseconds. Visitors decide within 50 milliseconds whether to stay on your site or leave. Clean design means clear hierarchy, readable fonts, consistent brand colors, and enough white space for the eye to rest. Clutter, outdated graphics, or mismatched fonts signal unprofessionalism before a visitor reads a single word of your content.</p>
-
-            <h3>Fast Load Speed</h3>
-            <p>53% of mobile users abandon a website that takes more than 3 seconds to load, according to Google's own research. Slow websites don't just frustrate visitors &mdash; they also rank lower in search results. A well-built small business website loads in under 2 seconds, uses optimized images, minimal unnecessary scripts, and clean, lean code written by hand.</p>
-
-            <h3>Mobile Responsiveness</h3>
-            <p>More than 60% of web traffic now comes from mobile devices. If your website isn't designed to look great and work properly on a smartphone, you're losing more than half your visitors before they even read your headline. Every button needs to be tappable, every section needs to reflow naturally for smaller screens, and the overall experience should feel intentional &mdash; not like a shrunken version of a desktop site.</p>
-
-            <h3>A Clear Call to Action (CTA)</h3>
-            <p>Every page on your site should clearly answer one question: "What do you want visitors to do next?" Whether it's calling your number, filling out a contact form, booking an appointment, or visiting your location &mdash; there should be an obvious, prominent button guiding them to that next step. Buried or absent CTAs are one of the most common missed opportunities in small business websites.</p>
-
-            <h3>Visible Contact Information</h3>
-            <p>This seems obvious, but many small business websites bury their contact details or omit them entirely from key pages. Your phone number, address (if applicable), and a contact form should be easy to find from anywhere on the site. Ideally, a phone number or "Contact Us" button lives in the navigation header so it's always one click or tap away &mdash; regardless of which page a visitor lands on first.</p>
-
-            <h3>SEO Basics</h3>
-            <p>A beautiful website that no one can find does nothing for your business. Good foundational SEO means: descriptive page titles that include your business type and city, helpful content written with natural language your customers actually use, your address and hours clearly listed for local search visibility, and fast mobile performance. You don't need to be an SEO expert &mdash; you need a developer who builds with these fundamentals from the very start.</p>
-
-            <h3>Trust Signals</h3>
-            <p>Visitors want to feel confident before they contact you or hand over their money. Trust signals include: genuine client testimonials, professional photography of your work or location, clearly listed credentials or certifications, a physical business address, and a professional email address rather than a personal Gmail. These details add up to a site that makes visitors feel safe enough to take the next step.</p>
-
-            <h3>Consistent Branding</h3>
-            <p>Your website should feel like a natural, seamless extension of your business &mdash; using the same colors, fonts, and tone of voice that appear on your business cards, social profiles, and signage. Inconsistent branding creates confusion and makes a business look hastily assembled. Consistent branding builds recognition, trust, and memorability with every customer touchpoint.</p>
-          </div>
-        </article>
-
-        <!-- ── Article 3 ── -->
-        <article class="blog-article-item">
-          <div class="blog-article-header">
-            <span class="blog-tag">Pricing &amp; Value</span>
-            <h2>How Much Does a Website Cost for a Small Business in 2026?</h2>
-            <p class="blog-article-meta">By Kachina Koncepts &bull; 5 min read</p>
-          </div>
-          <div class="blog-article-content">
-            <p>One of the most common questions we hear from business owners is: "How much does a website actually cost?" The honest answer is &mdash; it depends entirely on who builds it and how. Here's a clear breakdown of your main options in 2026, what you get at each price point, and how to decide what makes sense for your specific business.</p>
-
-            <h3>Option 1: DIY Website Builders (Wix, Squarespace, GoDaddy)</h3>
-            <p><strong>Cost: $16&ndash;$55/month (approximately $200&ndash;$660/year)</strong></p>
-            <p>DIY builders are the cheapest option on paper, but they come with real trade-offs. You spend time &mdash; often far more than expected &mdash; building and maintaining the site yourself. Templates look similar across millions of other businesses using the same platform. Customization is limited to whatever the platform allows. Performance and SEO are often constrained by the builder's infrastructure. And you're locked in &mdash; if the platform raises prices or shuts down, you start from scratch.</p>
-            <p><strong>Best for:</strong> Side projects or very simple informational needs with a minimal budget and willingness to handle everything yourself.</p>
-
-            <h3>Option 2: Hiring a Freelance Web Developer</h3>
-            <p><strong>Cost: $500&ndash;$3,500 for a professional custom site</strong></p>
-            <p>A freelance web developer builds your site from scratch, fully customized to your brand, goals, and audience. You get a site that's uniquely yours &mdash; not a template with your logo swapped in. Communication is direct with no middlemen or account managers. Revision cycles are faster and more personal. And because a freelancer has lower overhead than an agency, you pay for skill and craftsmanship, not office space and management layers.</p>
-            <p>This is the sweet spot for most small businesses. You get professional quality at a fraction of agency prices, with personal attention from someone genuinely invested in your project's success. Kachina Koncepts operates in this space &mdash; professional, custom, affordable, with direct communication from first conversation to final launch.</p>
-            <p><strong>Best for:</strong> Small businesses that want a professional, unique website at a fair price without the agency overhead.</p>
-
-            <h3>Option 3: Web Design Agencies</h3>
-            <p><strong>Cost: $5,000&ndash;$50,000+ for a custom site</strong></p>
-            <p>Agencies bring large teams, formal processes, and often impressive portfolios. For enterprise-scale projects or businesses with genuinely complex technical requirements &mdash; custom integrations, web applications, large content platforms &mdash; an agency may be the right fit. But for most small businesses, agency pricing is far beyond what's necessary to achieve excellent results. You're often paying for the agency's overhead, not for measurably better work.</p>
-            <p><strong>Best for:</strong> Large companies, complex custom web applications, and enterprise-level technical projects.</p>
-
-            <h3>So What Should You Actually Pay?</h3>
-            <p>For most small businesses in 2026 &mdash; a service business, restaurant, contractor, salon, fitness studio, or local retailer &mdash; a budget of $800&ndash;$2,500 for a professional freelancer-built website is the right investment. You get a custom design, fast performance, mobile-first development, and genuine ongoing support &mdash; without the DIY headache or the agency price tag.</p>
-            <p>At Kachina Koncepts, we build professional, hand-coded websites in exactly that range. Every project is built from scratch, optimized for mobile and search engines, and delivered with honest pricing and direct communication from start to finish.</p>
-            <div style="margin-top:1.75rem">
-              <button class="btn-primary" onclick="switchTab('contact')">Get a Free Quote &rarr;</button>
-            </div>
-          </div>
-        </article>
-
-      </div><!-- /blog-articles-expanded -->
-
-    </div><!-- /section-container -->
-
-    <footer class="footer" style="margin-top:4rem">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <!-- ===== PORTFOLIO PAGE ===== -->
-  <section id="portfolio" class="page">
-
-    <div class="portfolio-coming-soon">
-      <div class="pcs-inner reveal">
-        <div class="pcs-icon" aria-hidden="true">&#128640;</div>
-        <h1>Portfolio Coming Soon</h1>
-        <p>We are currently documenting our work. Check back soon to see our latest projects.</p>
-        <button class="btn-primary" onclick="switchTab('contact')">Contact Us In The Meantime &rarr;</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <!-- ===== CONTACT PAGE ===== -->
-  <section id="contact" class="page">
-
-    <div class="page-header">
-      <p class="section-tag reveal">Contact</p>
-      <h1 class="reveal">Let's Work Together</h1>
-      <p class="reveal">Have a project in mind? Reach out and we'll talk through it &mdash; no pressure, no pitch.</p>
-    </div>
-
-    <div class="contact-outer">
-
-      <div class="contact-page-grid reveal">
-
-        <div class="contact-form-block">
-
-          <div data-fs-success class="cf-success" style="display:none">
-            <div class="cf-success-icon">&#10003;</div>
-            <h3>Message sent!</h3>
-            <p>Thanks for reaching out. I'll be in touch within 24 hours.</p>
-          </div>
-
-          <div data-fs-error class="cf-global-error"></div>
-
-          <form id="contact-form" class="cf-form">
-
-            <div class="cf-row">
-              <label class="cf-label" for="cf-name">Your Name</label>
-              <input id="cf-name" class="cf-input" type="text" name="name" placeholder="Jane Smith" required data-fs-field />
-              <span class="cf-error-msg" data-fs-error="name"></span>
-            </div>
-
-            <div class="cf-row">
-              <label class="cf-label" for="cf-email">Email Address</label>
-              <input id="cf-email" class="cf-input" type="email" name="email" placeholder="jane@example.com" required data-fs-field />
-              <span class="cf-error-msg" data-fs-error="email"></span>
-            </div>
-
-            <div class="cf-row">
-              <label class="cf-label" for="cf-phone">Phone / Text <span class="cf-optional">(optional)</span></label>
-              <input id="cf-phone" class="cf-input" type="tel" name="phone" placeholder="(832) 555-0110" data-fs-field />
-              <span class="cf-error-msg" data-fs-error="phone"></span>
-            </div>
-
-            <div class="cf-row">
-              <label class="cf-label" for="cf-site-type">Type of Site Needed</label>
-              <select id="cf-site-type" class="cf-select" name="site_type" required data-fs-field>
-                <option value="" disabled selected>Select an option&hellip;</option>
-                <option value="Landing Page">Landing Page</option>
-                <option value="Business Website">Business Website</option>
-                <option value="Portfolio">Portfolio</option>
-                <option value="E-Commerce">E-Commerce</option>
-                <option value="Website Redesign">Website Redesign</option>
-                <option value="Not sure yet">Not sure yet</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="cf-error-msg" data-fs-error="site_type"></span>
-            </div>
-
-            <div class="cf-row">
-              <label class="cf-label" for="cf-message">Tell Me About Your Project</label>
-              <textarea id="cf-message" class="cf-textarea" name="message" placeholder="Tell me a bit about your business, what you're looking for, and roughly when you'd like to launch&hellip;" required data-fs-field></textarea>
-              <span class="cf-error-msg" data-fs-error="message"></span>
-            </div>
-
-            <button type="submit" class="btn-primary cf-submit" data-fs-submit-btn>
-              Send Message &rarr;
-            </button>
-
-          </form>
-        </div>
-
-        <div class="contact-expect-card">
-          <h3>What to expect</h3>
-          <div class="expect-steps">
-
-            <div class="expect-step">
-              <div class="expect-num">1</div>
-              <div>
-                <h4>You reach out</h4>
-                <p>Send a message with a quick description of your project. No forms, no intake questionnaires &mdash; just a message.</p>
-              </div>
-            </div>
-
-            <div class="expect-step">
-              <div class="expect-num">2</div>
-              <div>
-                <h4>We have a quick conversation</h4>
-                <p>We'll talk through what you need &mdash; your goals, your brand, your timeline, and any features you want included.</p>
-              </div>
-            </div>
-
-            <div class="expect-step">
-              <div class="expect-num">3</div>
-              <div>
-                <h4>We agree on a scope and price</h4>
-                <p>You get a clear quote before anything starts. No surprises, no scope creep without your approval.</p>
-              </div>
-            </div>
-
-            <div class="expect-step">
-              <div class="expect-num">4</div>
-              <div>
-                <h4>We build your site</h4>
-                <p>You'll see progress along the way and can request changes before final delivery.</p>
-              </div>
-            </div>
-
-            <div class="expect-step">
-              <div class="expect-num">5</div>
-              <div>
-                <h4>You launch</h4>
-                <p>Site goes live, you own everything, and you walk away with something you're proud of.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-mark">KK</span>
-          <span class="footer-tagline">Professional websites for local businesses.</span>
-        </div>
-        <nav class="footer-nav">
-          <button onclick="switchTab('home')">Home</button>
-          <button onclick="switchTab('services')">Services</button>
-          <button onclick="switchTab('design')" style="display:none">Design</button>
-          <button onclick="switchTab('blog')">Blog</button>
-          <button onclick="switchTab('portfolio')">Portfolio</button>
-          <button onclick="switchTab('contact')">Contact</button>
-        </nav>
-        <p class="footer-copy">&copy; 2026 Kachina Koncepts. All rights reserved.</p>
-      </div>
-    </footer>
-
-  </section>
-
-
-  <script src="script.js"></script>
-  <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#contact-form', formId: 'xwvjyajj' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
-  <!-- Logo lightbox -->
-  <div class="logo-lightbox" id="logoLightbox" aria-hidden="true">
-    <button class="logo-lightbox-close" id="logoLightboxClose" aria-label="Close">&times;</button>
-    <img src="updatedkachinalogo.png" alt="Kachina Koncepts Logo" />
   </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="fu">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Comprehensive Contracting Services</h2>
+      <div class="rule"></div>
+      <p class="section-sub" style="max-width:580px; margin-bottom:44px;">From small renovations to large commercial builds, we bring the same dedication to quality and detail on every project.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fu">
+        <div class="svc-num">01 &mdash; General Contracting</div>
+        <h3 class="svc-title">Full-Service Project Management</h3>
+        <p class="svc-desc">We coordinate every trade, timeline, and detail so you don't have to — from planning through the final walk-through.</p>
+        <ul class="svc-list">
+          <li>Project planning &amp; budgeting</li>
+          <li>Subcontractor coordination</li>
+          <li>Permits &amp; inspections</li>
+          <li>Quality control oversight</li>
+        </ul>
+      </div>
+      <div class="svc-card fu">
+        <div class="svc-num">02 &mdash; Remodeling</div>
+        <h3 class="svc-title">Transform Your Existing Space</h3>
+        <p class="svc-desc">Kitchens, bathrooms, basements, additions — we handle it all with precision and care for your home.</p>
+        <ul class="svc-list">
+          <li>Kitchen &amp; bath remodels</li>
+          <li>Basement finishing</li>
+          <li>Home additions</li>
+          <li>Interior renovations</li>
+        </ul>
+      </div>
+      <div class="svc-card fu">
+        <div class="svc-num">03 &mdash; New Construction</div>
+        <h3 class="svc-title">Build Your Dream Home</h3>
+        <p class="svc-desc">We manage the entire build from site prep to final walk-through with uncompromising attention to detail.</p>
+        <ul class="svc-list">
+          <li>Custom home builds</li>
+          <li>Site preparation</li>
+          <li>Foundation to finish</li>
+          <li>Energy-efficient builds</li>
+        </ul>
+      </div>
+      <div class="svc-card fu">
+        <div class="svc-num">04 &mdash; Commercial Work</div>
+        <h3 class="svc-title">Reliable Commercial Construction</h3>
+        <p class="svc-desc">Tenant improvements and new builds delivered on schedule, minimizing disruption to your business.</p>
+        <ul class="svc-list">
+          <li>Office build-outs</li>
+          <li>Retail &amp; restaurant spaces</li>
+          <li>Warehouse &amp; industrial</li>
+          <li>ADA compliance upgrades</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Content LEFT, photo RIGHT — opposite of KK -->
+      <div class="fu">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">Craftsmanship You Can Count On</h2>
+        <div class="rule"></div>
+        <p class="about-p">Dale Mercer started swinging a hammer at 18 and never looked back. Over two decades later, Dale Mercer Contracting has built a reputation across the region for honest work, transparent communication, and results that stand the test of time.</p>
+        <p class="about-p">We treat every project like it's our own home — because we believe that's the only way to do it right. Our team of experienced craftsmen brings the same care to a bathroom remodel as we do to a full commercial build.</p>
+        <div class="about-stats">
+          <div class="astat">
+            <div class="astat-val">500+</div>
+            <div class="astat-lbl">Projects Done</div>
+          </div>
+          <div class="astat">
+            <div class="astat-val">4.9&#9733;</div>
+            <div class="astat-lbl">Avg. Rating</div>
+          </div>
+          <div class="astat">
+            <div class="astat-val">20+</div>
+            <div class="astat-lbl">Yrs Experience</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-gold">Start Your Project &rarr;</a>
+      </div>
+      <div class="fu">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
+          alt="Dale Mercer on a job site"
+          class="about-img"
+        >
+        <div class="about-cred">
+          <span>Fully Licensed</span>
+          <span>Fully Insured</span>
+          <span>Bonded</span>
+          <span>5-Star Rated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="projects" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="fu" style="text-align:center; margin-bottom:44px;">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Recent Projects</h2>
+      <div class="rule c"></div>
+      <p class="section-sub" style="max-width:520px; margin:0 auto;">A look at some of the work we're most proud of. Each project reflects our commitment to lasting quality.</p>
+    </div>
+    <div class="gallery fu">
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern Kitchen Remodel" loading="lazy">
+        <div class="gov"><span>Modern Kitchen Remodel</span></div>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Custom Home Build" loading="lazy">
+        <div class="gov"><span>Custom Home Build</span></div>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Luxury Bath Renovation" loading="lazy">
+        <div class="gov"><span>Luxury Bath Renovation</span></div>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Commercial Build-Out" loading="lazy">
+        <div class="gov"><span>Commercial Build-Out</span></div>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Open-Concept Addition" loading="lazy">
+        <div class="gov"><span>Open-Concept Addition</span></div>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80" alt="New Construction Framing" loading="lazy">
+        <div class="gov"><span>New Construction Framing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="fu" style="text-align:center; margin-bottom:52px;">
+      <span class="section-label" style="color:rgba(255,255,255,.45);">Client Reviews</span>
+      <h2 class="section-title" style="color:#fff;">What Our Clients Say</h2>
+      <div class="rule c"></div>
+    </div>
+    <div class="tlist">
+      <div class="titem fu">
+        <div class="tquotemark">&ldquo;</div>
+        <div>
+          <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tquote">"Dale and his crew completely transformed our kitchen and master bath. The attention to detail was incredible — they caught things we hadn't even thought of. On time, on budget, and the results exceeded every expectation. We'll never use anyone else."</p>
+          <div class="tname">Jennifer L.</div>
+          <div class="tloc">Springfield, IL &mdash; Kitchen &amp; Bath Remodel</div>
+        </div>
+      </div>
+      <div class="titem fu">
+        <div class="tquotemark">&ldquo;</div>
+        <div>
+          <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tquote">"We hired Dale Mercer Contracting for a full home addition — 1,200 sq ft. The process was smooth from day one. Dale communicated every step of the way, his guys were professional and clean, and the finished product is absolutely stunning. Highly recommend."</p>
+          <div class="tname">Robert &amp; Tracy M.</div>
+          <div class="tloc">Decatur, IL &mdash; Home Addition</div>
+        </div>
+      </div>
+      <div class="titem fu">
+        <div class="tquotemark">&ldquo;</div>
+        <div>
+          <div class="tstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tquote">"As a business owner, I needed a contractor who respected my timeline and budget. Dale delivered both — our new office space came in under budget and two days early. The quality is outstanding. I've already referred three colleagues and will continue to."</p>
+          <div class="tname">David K.</div>
+          <div class="tloc">Champaign, IL &mdash; Commercial Office Build-Out</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="fu" style="text-align:center; margin-bottom:44px;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Ready to Start Your Project?</h2>
+      <div class="rule c"></div>
+      <p class="section-sub" style="max-width:500px; margin:0 auto;">Fill out the form and we'll get back to you within one business day with a free consultation.</p>
+    </div>
+    <div class="contact-info-row fu">
+      <div class="ci-item">
+        <div class="ci-lbl">Phone</div>
+        <div class="ci-val"><a href="tel:+15551234567">(555) 123-4567</a></div>
+        <div class="ci-sub">Call or text anytime</div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-lbl">Email</div>
+        <div class="ci-val"><a href="mailto:dale@dalemercercontracting.com">dale@dalemercercontracting.com</a></div>
+        <div class="ci-sub">Reply within 24 hrs</div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-lbl">Hours</div>
+        <div class="ci-val">Mon&ndash;Fri: 7am&ndash;6pm</div>
+        <div class="ci-sub">Sat: 8am&ndash;2pm</div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-lbl">Service Area</div>
+        <div class="ci-val">Central Illinois</div>
+        <div class="ci-sub">Springfield, Decatur, Champaign, Bloomington, Peoria</div>
+      </div>
+    </div>
+    <div class="contact-form-wrap fu">
+      <div class="cform-title">Request a Free Quote</div>
+      <div class="cform-sub">No obligation. We'll review your project and reach out to schedule a time that works for you.</div>
+      <form id="contactForm" novalidate>
+        <div class="frow">
+          <div class="fg">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="John" required>
+          </div>
+          <div class="fg">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="fg">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="project">Project Description</label>
+          <textarea id="project" name="project" placeholder="Tell us about your project — what you're looking to do, approximate timeline, and any details that will help us understand your vision..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold fsub">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <div class="foot-logo-icon">DM</div>
+          <span class="foot-logo-name">Dale Mercer Contracting</span>
+        </div>
+        <p class="foot-tagline">Built Right. Built to Last. Serving Central Illinois with integrity, craftsmanship, and pride since 2004.</p>
+        <div class="foot-contact">
+          <a href="tel:+15551234567">(555) 123-4567</a> &nbsp;&bull;&nbsp;
+          <a href="mailto:dale@dalemercercontracting.com">dale@dalemercercontracting.com</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Services</div>
+        <div class="foot-links">
+          <a href="#services">General Contracting</a>
+          <a href="#services">Remodeling</a>
+          <a href="#services">New Construction</a>
+          <a href="#services">Commercial Work</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Company</div>
+        <div class="foot-links">
+          <a href="#about">About Dale</a>
+          <a href="#projects">Recent Projects</a>
+          <a href="#testimonials">Client Reviews</a>
+          <a href="#contact">Get a Free Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2024 Dale Mercer Contracting. All rights reserved.</span>
+      <span>Licensed &bull; Insured &bull; Bonded &nbsp;|&nbsp; IL Contractor Lic. #XXXXXXX</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">&#10005;</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script>
+  // Mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // Scroll animations
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  // Gallery lightbox
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  document.querySelectorAll('.gitem img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src.replace(/w=\d+/, 'w=1600');
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('.fsub');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '&#10003; Message Sent!';
+    btn.style.cssText = 'background:#10B981;border-color:#10B981;color:#fff;';
+    btn.disabled = true;
+    setTimeout(() => { btn.innerHTML = orig; btn.style.cssText = ''; btn.disabled = false; e.target.reset(); }, 3500);
+  });
+</script>
 </body>
 </html>
