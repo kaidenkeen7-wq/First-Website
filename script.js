@@ -135,6 +135,27 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Logo lightbox
+  const logoImg = document.querySelector('.logo-img');
+  const lightbox = document.getElementById('logoLightbox');
+  const lightboxClose = document.getElementById('logoLightboxClose');
+  if (logoImg && lightbox) {
+    logoImg.addEventListener('click', e => {
+      e.stopPropagation();
+      logoImg.classList.remove('logo-pop');
+      void logoImg.offsetWidth; // force reflow so animation restarts
+      logoImg.classList.add('logo-pop');
+      lightbox.classList.add('open');
+    });
+    lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
+  }
+
   const toggle = document.getElementById('mobileToggle');
   const drawer = document.getElementById('mobileDrawer');
   if (toggle && drawer) {
@@ -150,3 +171,4 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) closeMobileMenu();
 }, { passive: true });
+
