@@ -12,6 +12,7 @@ function switchTab(tabName) {
     current.classList.remove('visible');
     setTimeout(() => {
       current.classList.remove('active');
+      resetPageAnimations(current);
       activatePage(tabName);
     }, 350);
   } else {
@@ -73,26 +74,77 @@ function observeReveals() {
   });
 }
 
-// ── Template card stagger animation ────────────────────────────
+// ── Card grid stagger animation ─────────────────────────────────
+const GRID_SELECTOR = '.templates-grid, .features-grid, .why-grid, .services-grid, .blog-card-grid, .demo-grid';
+
 const gridObserver = new IntersectionObserver(
   entries => entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      gridObserver.unobserve(entry.target);
-    }
+    if (!entry.isIntersecting) return;
+    const grid = entry.target;
+    grid.classList.add('in-view');
+
+    // After all stagger animations finish, clear animation so hover transitions work.
+    // Guard: if the page was switched away while we waited, the grid no longer has .in-view
+    // and its items were already reset by resetPageAnimations — don't overwrite them.
+    const items = grid.querySelectorAll(':scope > *');
+    const longestDelay = (items.length - 1) * 60 + 600;
+    setTimeout(() => {
+      if (!grid.classList.contains('in-view')) return;
+      items.forEach(item => {
+        item.style.animation = 'none';
+        item.style.opacity   = '1';
+        item.style.transform = 'none';
+      });
+    }, longestDelay);
+
+    gridObserver.unobserve(grid);
   }),
-  { threshold: 0.1 }
+  { threshold: 0.08 }
 );
 
 function observeGrids() {
-  document.querySelectorAll('.templates-grid:not(.in-view)').forEach(el => {
+  document.querySelectorAll(`${GRID_SELECTOR}:not(.in-view)`).forEach(el => {
     gridObserver.observe(el);
   });
 }
 
-// ── Navbar shrink on scroll ─────────────────────────────────────
+// ── Reset a page's animation state so re-entering replays everything ──
+function resetPageAnimations(page) {
+  // Remove .visible so reveal elements animate in again on return
+  page.querySelectorAll('.reveal.visible').forEach(el => el.classList.remove('visible'));
+
+  // Remove .in-view from grids, clear JS-set inline styles, re-queue for gridObserver
+  page.querySelectorAll(GRID_SELECTOR).forEach(grid => {
+    if (!grid.classList.contains('in-view')) return;
+    grid.classList.remove('in-view');
+    grid.querySelectorAll(':scope > *').forEach(item => {
+      item.style.animation = '';
+      item.style.opacity   = '';
+      item.style.transform = '';
+    });
+    gridObserver.observe(grid);
+  });
+}
+
+// ── Navbar shrink + parallax + scroll-to-top ───────────────────
+const mbImg       = document.querySelector('.mb-img');
+const scrollTopBtn = document.getElementById('scrollTop');
+let rafPending = false;
+
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 24);
+  if (scrollTopBtn) scrollTopBtn.classList.toggle('visible', window.scrollY > 320);
+
+  if (!rafPending) {
+    rafPending = true;
+    requestAnimationFrame(() => {
+      if (mbImg) {
+        const maxShift = window.innerHeight * 0.07;
+        mbImg.style.transform = `translateY(${Math.min(window.scrollY * 0.18, maxShift)}px)`;
+      }
+      rafPending = false;
+    });
+  }
 }, { passive: true });
 
 // ── Smooth-scroll anchor clicks ─────────────────────────────────
@@ -166,6 +218,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   activatePage('home');
+
+  // Scroll-to-top
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
 
 window.addEventListener('resize', () => {
@@ -232,6 +291,7 @@ function renderDemoGrid() {
           loading="lazy"
           onerror="this.style.display='none'"
         >
+        <div class="demo-hover-reveal" aria-hidden="true"><span>View Demo</span></div>
       </div>
       <div class="demo-card-meta">
         <div class="demo-card-name">${escHtml(p.name)}</div>
@@ -268,6 +328,7 @@ function openDemoModal(index) {
   const iframe    = document.getElementById('demoModalIframe');
   const holder    = document.getElementById('demoModalPlaceholder');
   if (!overlay) return;
+  overlay.classList.remove('closing');
 
   titleEl.textContent = p.name;
 
@@ -291,10 +352,13 @@ function openDemoModal(index) {
 function closeDemoModal() {
   const overlay = document.getElementById('demoModalOverlay');
   const iframe  = document.getElementById('demoModalIframe');
-  if (!overlay) return;
-  overlay.classList.remove('open');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  overlay.classList.add('closing');
   document.body.style.overflow = '';
-  setTimeout(() => { if (iframe) iframe.src = 'about:blank'; }, 320);
+  setTimeout(() => {
+    overlay.classList.remove('open', 'closing');
+    if (iframe) iframe.src = 'about:blank';
+  }, 240);
 }
 
 function scaleModalIframe() {

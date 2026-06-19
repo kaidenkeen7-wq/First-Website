@@ -56,12 +56,25 @@
 
     <!-- Hero -->
     <div class="hero">
+      <div class="hero-particles" aria-hidden="true">
+        <span class="hp-1">&lt;/&gt;</span>
+        <span class="hp-2">{  }</span>
+        <span class="hp-3">#</span>
+        <span class="hp-4">()</span>
+        <span class="hp-5">&lt;/&gt;</span>
+        <span class="hp-6">;</span>
+        <span class="hp-7">{ }</span>
+        <span class="hp-8">//</span>
+      </div>
       <div class="hero-content">
         <span class="hero-badge">Local Web Developer &mdash; Houston Area</span>
         <p class="hero-brand-name">Kachina Koncepts</p>
         <h1>Professional Custom<br>Website Design</h1>
         <p class="hero-sub">Serving The Woodlands, Magnolia &amp; Greater Houston Area</p>
         <button class="btn-primary" onclick="switchTab('contact')">Get a Free Quote &rarr;</button>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-inner"><span></span></div>
       </div>
     </div>
 
@@ -72,26 +85,34 @@
           <p class="section-tag">What We Offer</p>
           <h2 class="dark-heading">Everything Your Business Needs Online</h2>
         </div>
-        <div class="features-grid reveal">
+        <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">&#128421;</div>
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M12 17v3M8 22h8"/><polyline points="7 9 10 12 7 15"/><line x1="13" y1="14" x2="17" y2="14"/></svg>
+            </div>
             <h3>Custom Website Design</h3>
-            <p>Modern, responsive designs built from scratch to represent your brand &mdash; no templates, no shortcuts.</p>
+            <p>Hand-coded from scratch to fit your brand exactly. Every layout, color, and detail is built around you.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">&#128241;</div>
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/></svg>
+            </div>
             <h3>Mobile-Friendly</h3>
-            <p>Every site looks perfect on phones, tablets, and desktops. Mobile-first is not optional, it's the standard.</p>
+            <p>Looks and works great on every device your customers actually use &mdash; phone, tablet, or desktop.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">&#128269;</div>
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+            </div>
             <h3>SEO Ready</h3>
-            <p>Built with clean code and proper structure so Google can find you and customers can reach you.</p>
+            <p>Built with clean code and proper structure so Google can find you and real customers can reach you.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">&#9889;</div>
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             <h3>Fast Turnaround</h3>
-            <p>Local developer, direct communication, quick delivery. Most sites go live in under 2 weeks.</p>
+            <p>Direct communication, no middlemen. Most sites go live within 2 weeks &mdash; sometimes faster.</p>
           </div>
         </div>
       </div>
@@ -105,27 +126,27 @@
           <h2>Why Kachina Koncepts?</h2>
         </div>
         <div class="why-grid">
-          <div class="why-card reveal">
+          <div class="why-card">
             <div class="why-check">&#10003;</div>
             <h3>Local &amp; Personal</h3>
             <p>Based in The Woodlands &amp; Magnolia TX. You work directly with the developer &mdash; not a middleman or agency.</p>
           </div>
-          <div class="why-card reveal">
+          <div class="why-card">
             <div class="why-check">&#10003;</div>
             <h3>Affordable Pricing</h3>
             <p>Professional quality without the agency price tag. Transparent quotes and no hidden fees &mdash; ever.</p>
           </div>
-          <div class="why-card reveal">
+          <div class="why-card">
             <div class="why-check">&#10003;</div>
             <h3>Fast Turnaround</h3>
             <p>Most projects completed in 1&ndash;2 weeks, not months. Local developer, direct communication, fast delivery.</p>
           </div>
-          <div class="why-card reveal">
+          <div class="why-card">
             <div class="why-check">&#10003;</div>
             <h3>Built for Results</h3>
             <p>Every site is mobile-first, SEO-ready, and designed to convert visitors into real customers.</p>
           </div>
-          <div class="why-card reveal">
+          <div class="why-card">
             <div class="why-check">&#10003;</div>
             <h3>Direct Communication</h3>
             <p>No ticket systems, no waiting in line. You'll always reach us directly &mdash; real responses, fast.</p>
@@ -183,64 +204,84 @@
     </div>
 
     <div class="section-container services-wrap">
-      <div class="services-grid reveal">
+      <div class="services-grid">
 
         <div class="service-card">
-          <div class="service-icon">&#127760;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
           <h3>Custom Websites</h3>
           <p>Fully hand-coded in HTML, CSS, and JavaScript &mdash; no page builders, no bloat. Built to your exact brand.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128196;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          </div>
           <h3>Landing Pages</h3>
           <p>High-converting single-page sites for campaigns, promos, or new business launches. Fast to build, fast to load.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#127962;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5"/></svg>
+          </div>
           <h3>Business Websites</h3>
           <p>Multi-page professional sites (5&ndash;10 pages) covering your services, about section, contact, and more.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#127912;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
           <h3>Portfolio Sites</h3>
           <p>Showcase your work with a clean, modern site that lets your projects speak for themselves.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128717;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
           <h3>Product &amp; Menu Display</h3>
           <p>Service catalogs, restaurant menus, product listings &mdash; beautifully laid out and easy to navigate.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128260;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
           <h3>Website Redesigns</h3>
-          <p>Got an old or ugly site? We'll transform it into something you're proud to share with customers.</p>
+          <p>Got an old or tired site? We'll rebuild it into something you're proud to send to customers.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128241;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/></svg>
+          </div>
           <h3>Mobile Responsive</h3>
           <p>Every site looks and works perfectly on phones, tablets, and desktops &mdash; no extra charge.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128269;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
           <h3>SEO Optimization</h3>
           <p>Proper structure, meta tags, semantic HTML, and fast load times so Google can actually find you.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128236;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+          </div>
           <h3>Contact Forms</h3>
           <p>Functional inquiry forms that capture leads and send them straight to your email or inbox.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#9889;</div>
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <h3>Fast Delivery</h3>
           <p>Most projects go live in under 2 weeks. Need it sooner? We can usually make it happen.</p>
         </div>
@@ -564,11 +605,13 @@
 
     <div class="section-container blog-section-wrap">
 
-      <div class="blog-card-grid reveal">
+      <div class="blog-card-grid">
 
         <!-- Card 1 -->
         <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-blue">&#127760;</div>
+          <div class="blog-card-icon-bar blog-icon-blue">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Business Growth</span>
             <h3>10 Reasons Your Business Needs a Website in 2026</h3>
@@ -578,7 +621,9 @@
 
         <!-- Card 2 -->
         <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-green">&#9881;</div>
+          <div class="blog-card-icon-bar blog-icon-green">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M12 17v3M8 22h8"/><polyline points="7 9 10 12 7 15"/><line x1="13" y1="14" x2="17" y2="14"/></svg>
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Web Design</span>
             <h3>What Makes a Good Small Business Website?</h3>
@@ -588,7 +633,9 @@
 
         <!-- Card 3 -->
         <div class="blog-preview-card">
-          <div class="blog-card-icon-bar blog-icon-amber">&#128176;</div>
+          <div class="blog-card-icon-bar blog-icon-amber">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Pricing &amp; Value</span>
             <h3>How Much Does a Website Cost for a Small Business in 2026?</h3>
@@ -964,6 +1011,10 @@
 
 
   <script src="script.js"></script>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top" title="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
 </body>
 </html>
