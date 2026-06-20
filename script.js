@@ -261,7 +261,8 @@ const DEMO_PROJECTS = [
     screenshot: 'screenshots/crestline-mech-hero.png',
     description: 'HVAC & mechanical contractor — service areas, 24/7 emergency callout, and online booking form',
     tags: ['Booking Form', 'Service Areas', 'Emergency CTA', 'Mobile Responsive'],
-    liveUrl: 'https://crestlinemechv1.vercel.app/'
+    liveUrl: 'https://crestlinemechv1.vercel.app/',
+    previewImg: 'screenshots/crestline-mech-hero.png'
   }
 ];
 
@@ -321,28 +322,39 @@ function escHtml(str) {
 }
 
 function openDemoModal(index) {
-  const p = DEMO_PROJECTS[index];
-  const overlay   = document.getElementById('demoModalOverlay');
-  const titleEl   = document.getElementById('demoModalTitle');
-  const linkEl    = document.getElementById('demoModalLink');
-  const iframe    = document.getElementById('demoModalIframe');
-  const holder    = document.getElementById('demoModalPlaceholder');
+  const p          = DEMO_PROJECTS[index];
+  const overlay    = document.getElementById('demoModalOverlay');
+  const titleEl    = document.getElementById('demoModalTitle');
+  const linkEl     = document.getElementById('demoModalLink');
+  const iframe     = document.getElementById('demoModalIframe');
+  const holder     = document.getElementById('demoModalPlaceholder');
+  const previewImg = document.getElementById('demoModalPreviewImg');
   if (!overlay) return;
   overlay.classList.remove('closing');
 
   titleEl.textContent = p.name;
 
-  if (p.liveUrl) {
-    iframe.style.display  = '';
-    holder.style.display  = 'none';
-    linkEl.style.display  = '';
-    linkEl.href           = p.liveUrl;
-    iframe.src            = p.liveUrl;
+  if (p.previewImg) {
+    iframe.style.display      = 'none';
+    holder.style.display      = 'none';
+    previewImg.src            = p.previewImg;
+    previewImg.alt            = p.name + ' preview';
+    previewImg.style.display  = '';
+    linkEl.style.display      = p.liveUrl ? '' : 'none';
+    if (p.liveUrl) linkEl.href = p.liveUrl;
+  } else if (p.liveUrl) {
+    iframe.style.display      = '';
+    holder.style.display      = 'none';
+    previewImg.style.display  = 'none';
+    linkEl.style.display      = '';
+    linkEl.href               = p.liveUrl;
+    iframe.src                = p.liveUrl;
     requestAnimationFrame(() => requestAnimationFrame(scaleModalIframe));
   } else {
-    iframe.style.display  = 'none';
-    holder.style.display  = 'flex';
-    linkEl.style.display  = 'none';
+    iframe.style.display      = 'none';
+    previewImg.style.display  = 'none';
+    holder.style.display      = 'flex';
+    linkEl.style.display      = 'none';
   }
 
   overlay.classList.add('open');
@@ -350,14 +362,16 @@ function openDemoModal(index) {
 }
 
 function closeDemoModal() {
-  const overlay = document.getElementById('demoModalOverlay');
-  const iframe  = document.getElementById('demoModalIframe');
+  const overlay    = document.getElementById('demoModalOverlay');
+  const iframe     = document.getElementById('demoModalIframe');
+  const previewImg = document.getElementById('demoModalPreviewImg');
   if (!overlay || !overlay.classList.contains('open')) return;
   overlay.classList.add('closing');
   document.body.style.overflow = '';
   setTimeout(() => {
     overlay.classList.remove('open', 'closing');
     if (iframe) iframe.src = 'about:blank';
+    if (previewImg) previewImg.src = '';
   }, 240);
 }
 

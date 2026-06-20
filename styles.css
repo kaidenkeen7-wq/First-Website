@@ -2026,6 +2026,16 @@ body {
   transform-origin: top left;
 }
 
+.demo-modal-preview-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
 /* ─── No-URL placeholder ─── */
 .demo-modal-placeholder {
   position: absolute;
