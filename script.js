@@ -263,6 +263,14 @@ const DEMO_PROJECTS = [
     tags: ['Booking Form', 'Service Areas', 'Emergency CTA', 'Mobile Responsive'],
     liveUrl: 'https://crestlinemechv1.vercel.app/',
     previewImg: 'screenshots/crestline-mech-hero.png'
+  },
+  {
+    name: 'Magnolia Hearth Bakery & Café',
+    fakeUrl: 'magnolia-hearth.demo',
+    screenshot: 'screenshots/magnolia-hearth-hero.png',
+    description: 'Small-batch bakery & coffee bar — auto-scrolling bake case gallery, catering inquiry form, and embedded location map',
+    tags: ['Auto-scroll Gallery', 'Inquiry Form', 'Location Map', 'Mobile Responsive'],
+    liveUrl: 'https://magnolia-hearth.vercel.app/'
   }
 ];
 
