@@ -414,5 +414,55 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.footer-nav button[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => switchTab(btn.dataset.tab));
   });
+
+  /* ── Contact form — Formspree submission ─────────────────────── */
+  const contactForm  = document.getElementById('contact-form');
+  const successEl    = document.querySelector('[data-fs-success]');
+  const globalErrEl  = document.querySelector('[data-fs-error]:not([data-fs-error="name"]):not([data-fs-error="email"]):not([data-fs-error="phone"]):not([data-fs-error="site_type"]):not([data-fs-error="message"])');
+  const submitBtn    = document.querySelector('[data-fs-submit-btn]');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
+      e.preventDefault();
+
+      // Clear previous errors
+      document.querySelectorAll('[data-fs-error]').forEach(el => el.textContent = '');
+      if (globalErrEl) globalErrEl.textContent = '';
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mnjkqbkv', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          contactForm.style.display = 'none';
+          if (successEl) successEl.style.display = '';
+        } else {
+          // Surface Formspree field-level errors when available
+          if (data.errors) {
+            data.errors.forEach(err => {
+              const fieldEl = document.querySelector(`[data-fs-error="${err.field}"]`);
+              if (fieldEl) fieldEl.textContent = err.message;
+            });
+          } else {
+            if (globalErrEl) globalErrEl.textContent = 'Something went wrong. Please try again or email directly.';
+          }
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message →';
+        }
+      } catch {
+        if (globalErrEl) globalErrEl.textContent = 'Network error — please check your connection and try again.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message →';
+      }
+    });
+  }
 });
 
