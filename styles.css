@@ -692,6 +692,36 @@ body {
 
 
 /* ================================================================
+   LOGO CORNER WATERMARK
+   ================================================================ */
+.page-logo-corner {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 50;
+  transition: opacity .25s ease;
+}
+body[data-tab="blog"] .page-logo-corner,
+body[data-tab="portfolio"] .page-logo-corner { opacity: 0; }
+
+
+/* ================================================================
+   BLOG + PORTFOLIO — FOOTER PINNED TO BOTTOM
+   ================================================================ */
+#blog.active, #portfolio.active {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#blog .footer, #portfolio .footer { margin-top: auto; }
+
+
+/* ================================================================
    PORTFOLIO — COMING SOON
    ================================================================ */
 .portfolio-coming-soon {

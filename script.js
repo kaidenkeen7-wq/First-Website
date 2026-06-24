@@ -29,6 +29,7 @@ function switchTab(tabName) {
 function activatePage(tabName) {
   const page = document.getElementById(tabName);
   if (!page) return;
+  document.body.dataset.tab = tabName;
   page.classList.add('active');
 
   requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -261,8 +262,7 @@ const DEMO_PROJECTS = [
     screenshot: 'screenshots/crestline-mech-hero.png',
     description: 'HVAC & mechanical contractor — service areas, 24/7 emergency callout, and online booking form',
     tags: ['Booking Form', 'Service Areas', 'Emergency CTA', 'Mobile Responsive'],
-    liveUrl: 'https://crestlinemechv1.vercel.app/',
-    previewImg: 'screenshots/crestline-mech-hero.png'
+    liveUrl: 'https://crestlinemechv1.vercel.app/'
   },
   {
     name: 'Magnolia Hearth Bakery & Café',
